@@ -1,0 +1,48 @@
+@import url("https://wildflowerui.netlify.app/pages/components/Cards/cards.css");
+
+
+.like{
+    height: 2.2rem;
+}
+
+.like svg{
+    font-size: 2rem;
+    color: var(--dullgold);
+}
+
+.like svg:hover{
+    color: var(--dark-red3);
+}
+
+.product-container .product-content .product-ratings-container{
+    /* background-color: var(--grey2); */
+    bottom: 9.6rem;
+    margin-left:0.2rem;
+    bottom: 9.8rem;
+}
+
+.product-ratings-container .star-icon{
+    height: 1.4rem;
+}
+
+.product-count-seprator span{
+    padding-left: 1.2px;
+}
+
+.product-discount{
+    color: var(--gold1);
+}
+
+button.like-box{
+    top: 0.1rem;
+    right: 0.4rem;
+}
+
+.cross-box:hover{
+    color: var(--gold1);
+    background-color: var(--gold1);
+}
+
+.product-meta-info .product-strike{
+    padding-left: 4px;
+}

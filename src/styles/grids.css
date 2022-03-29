@@ -1,0 +1,32 @@
+.rows3-grid>* {
+    display: flex;
+    box-sizing: border-box;
+}
+
+.rows3-grid{
+    display: grid;
+    height: 100vh;
+    /* grid-gap: 2rem; */
+    grid-template-rows: 8rem 1fr 8rem;
+    grid-template-areas:
+        "row-grid1 row-grid1 row-grid1 row-grid1"
+        "row-grid2 row-grid2 row-grid2 row-grid2"
+        "row-grid3 row-grid3 row-grid3 row-grid3";  
+}
+
+
+.header {
+    grid-area: row-grid1;
+    /* background-color:var(--pink8bg); */
+}
+
+main{
+    grid-area: row-grid2;
+    background-color:var(--pink8bg);
+    padding-top: 3rem;
+}
+
+footer {
+    grid-area: row-grid3;
+    justify-content: center;
+}
