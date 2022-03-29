@@ -2,13 +2,15 @@ import React from 'react';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import './ProductCard.css' ;
+import { useAllData } from '../../context/AllDataContext';
 
 const calcPercentOff=(initialPrice,price)=>{
     return Math.floor((initialPrice-price)*100/price)
 }
 
-
 function ProductCard({singleProd}) {
+
+  const {state,dispatch}=useAllData();
   const {
     _id,
     name,
@@ -48,7 +50,7 @@ function ProductCard({singleProd}) {
                                 </span>
                             </div>
 
-                            <button className="like-box" >
+                            <button className="like-box" onClick={()=>dispatch({type:"ADD_TO_WISH",payload:singleProd})} >
                                 <div className="like">
                                     <FavoriteBorderIcon style={{height: "20px",width: "20px"}}/>
                                 </div>
