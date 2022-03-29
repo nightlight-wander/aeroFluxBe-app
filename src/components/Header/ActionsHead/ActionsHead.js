@@ -7,7 +7,7 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 function ActionsHead() {
   return (
     <div className="actions-head flex-vCenter">
-    <Link to="/profile" className="user flex-col flex-vCenter">
+    <Link to="/login" className="user flex-col flex-vCenter">
         <span><PermIdentityOutlinedIcon/> </span>
         <span className="actions-title">Profile</span>
     </Link>
