@@ -313,7 +313,7 @@ button .before-icon{
 }
 
 /* responsive navbar */
-@media only screen and (max-width:700px){
+/* @media only screen and (max-width:700px){
 
     header {
         display: grid;
@@ -324,7 +324,6 @@ button .before-icon{
     .nav-toggle {
         position: absolute !important;
         top: 50% !important;
-        /* left: 1px; */
         background-color: var(--dark-red1);
     }
 
@@ -452,4 +451,4 @@ button .before-icon{
         transition: opacity 250ms ease-in-out 250ms;
     }
 
-}
+} */

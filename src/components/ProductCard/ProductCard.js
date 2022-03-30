@@ -1,6 +1,7 @@
-import React from 'react';
+import React,{useState} from 'react';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import './ProductCard.css' ;
 import { useAllData } from '../../context/AllDataContext';
 
@@ -9,6 +10,23 @@ const calcPercentOff=(initialPrice,price)=>{
 }
 
 function ProductCard({singleProd}) {
+  const [activation,setActivation]=useState(false)
+  const styles={
+      borderActivate:{
+          display:activation?"none":"block",
+        //   color:activation?"red":"",
+      },
+      fillActivate:{
+          display:activation?"block":"none",
+          color:activation?`var(--pink5)`:"",
+      },
+      size:{height: "20px",width: "20px"}
+  }
+
+  const likeHandler=()=>{
+      setActivation(prevActivation=>!prevActivation)
+      dispatch({type:"ADD_TO_WISH",payload:singleProd})
+  }
 
   const {state,dispatch}=useAllData();
   const {
@@ -30,13 +48,13 @@ function ProductCard({singleProd}) {
                             <a href="#">
                                 <div className="prod-img-bottom-extra">
                                     <div className="prod-img-box">
-                                        <div className="prod-img" style={{height: "170px",width: "200px",maxInlineSize:"100%",objectFit:"contain"}}>
+                                        <div className="prod-img" style={{height: "170px",width: "200px",maxInlineSize:"100%"}}>
                                             <img src={imageUrl}
-                                            style={{height: "170px",width: "200px",maxInlineSize:"100%",objectFit:"contain cover",aspectRatio:"2:1"}}
+                                            style={{height: "170px",width: "200px",maxInlineSize:"100%",objectFit:"contain cover"}}
                                             alt={name}/>
                                         </div>
                                     </div>
-                                    {newProduct && <div className="prod-imgTag">New</div>}
+                                    {newProduct && <div className="prod-imgTag flex-vCenter">New</div>}
                                     {!stock && <div className="prod-imgTagBlur">OUT OF STOCK</div>}
                                 </div>
                             </a>
@@ -50,9 +68,10 @@ function ProductCard({singleProd}) {
                                 </span>
                             </div>
 
-                            <button className="like-box" onClick={()=>dispatch({type:"ADD_TO_WISH",payload:singleProd})} >
+                            <button className="like-box" onClick={()=>likeHandler()} >
                                 <div className="like">
-                                    <FavoriteBorderIcon style={{height: "20px",width: "20px"}}/>
+                                    <FavoriteBorderIcon style={styles.borderActivate}/>
+                                    <FavoriteIcon style={styles.fillActivate} />
                                 </div>
                             </button>
                             <div className="product-meta-info">

@@ -5,14 +5,31 @@
     height: 2.2rem;
 }
 
+.like-box:hover .like svg{
+    left:1rem;
+}
+
+.like-box:hover {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--blackl1);
+    border-radius: 50%;
+}
+
+.product-content .like-box:hover {
+    background-color: var(--blackl1);
+}
+
 .like svg{
     font-size: 2rem;
     color: var(--dullgold);
+    position: relative;
 }
 
-.like svg:hover{
+/* .like svg:hover{
     color: var(--dark-red3);
-}
+    
+} */
 
 .product-container .product-content .product-ratings-container{
     /* background-color: var(--grey2); */
