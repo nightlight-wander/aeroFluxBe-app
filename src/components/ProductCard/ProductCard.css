@@ -55,10 +55,10 @@ button.like-box{
     right: 0.4rem;
 }
 
-.cross-box:hover{
+/* .cross-box:hover{
     color: var(--gold1);
     background-color: var(--gold1);
-}
+} */
 
 .product-meta-info .product-strike{
     padding-left: 4px;
