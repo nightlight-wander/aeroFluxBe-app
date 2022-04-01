@@ -6,7 +6,7 @@ import { useAllData } from '../../context/AllDataContext';
 import "./Wishlist.css";
 function Wishlist() {
   const {state:{wishlist}}=useAllData();
-  console.log(wishlist)
+  // console.log(wishlist)
   // const {wishlist}=state;
   return (
     <div className="wishlistGrid-wrapper rows3-grid">
@@ -15,18 +15,8 @@ function Wishlist() {
         <section className="wishlist-wrapper">
           {wishlist.map((wishlistItem)=>
           <ProductCardLiked
-              imageUrl={wishlistItem.imageUrl}
               wishlistItem={wishlistItem}
               key={wishlistItem._id}
-              _id={wishlistItem._id}
-              name={wishlistItem.name}
-              price={wishlistItem.price}
-              initialPrice={wishlistItem.price}
-              ratingNo={wishlistItem.ratingNo}
-              categoryName={wishlistItem.categoryName}
-              stock={wishlistItem.stock}
-              reviews={wishlistItem.reviews}
-              newProduct={wishlistItem.newProduct}
           />
           )}
         </section>

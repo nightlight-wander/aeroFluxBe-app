@@ -18,10 +18,10 @@ function ProductListing() {
       try{
         const {data:products}=await axios.get("/api/products");
         const {data:categories}=await axios.get("/api/categories");
-        console.log(categories.categories)
-        console.log(categories.categories[0].categoryName)
-        console.log(products.products)
-        console.log(products.products[1].categoryName)
+        // console.log(categories.categories)
+        // console.log(categories.categories[0].categoryName)
+        // console.log(products.products)
+        // console.log(products.products[1].categoryName)
         const catProducts=categories.categories.map((category)=>{
           return products.products.filter((product)=>{
             return category.categoryName===product.categoryName
@@ -32,7 +32,7 @@ function ProductListing() {
         //     return product.categoryName===category.categoryName
         //   })
         // })
-        console.log(catProducts)
+        // console.log(catProducts)
         setProducts(catProducts[category])
         // console.log(products[category])
       }catch(error){

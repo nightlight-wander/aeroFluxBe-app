@@ -18,15 +18,23 @@ function ProductCard({singleProd}) {
       },
       fillActivate:{
           display:activation?"block":"none",
-          color:activation?`var(--pink5)`:"",
+          color:activation?`var(--dark-red2)`:"",
       },
       size:{height: "20px",width: "20px"}
   }
 
   const likeHandler=()=>{
-      setActivation(prevActivation=>!prevActivation)
-      dispatch({type:"ADD_TO_WISH",payload:singleProd})
+      console.log(state.wishlist)
+      let prodIndex=state.wishlist.find((item)=>item._id===_id)
+      if(prodIndex){
+        dispatch({type:"REMOVE_FROM_WISH",payload:singleProd})
+        setActivation(prevActivation=>!prevActivation)
+      }else {
+        dispatch({type:"ADD_TO_WISH",payload:singleProd})
+        setActivation(prevActivation=>!prevActivation)  
+      }
   }
+  
 
   const {state,dispatch}=useAllData();
   const {

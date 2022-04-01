@@ -3,6 +3,7 @@ import StarBorderIcon from '@mui/icons-material/StarBorder';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import './ProductCard.css' ;
+import { useAllData } from '../../context/AllDataContext';
 
 const calcPercentOff=(initialPrice,price)=>{
     return Math.floor((initialPrice-price)*100/price)
@@ -31,6 +32,11 @@ function ProductCardLiked({wishlistItem}) {
     reviews,
     newProduct
   } = wishlistItem;
+  const {state,dispatch}=useAllData();
+  const removeWishHandler=()=>{
+    console.log('clicked')
+    dispatch({type:"REMOVE_FROM_WISH",payload:wishlistItem})
+  };
   return (
         <div key={_id} className="product">
                     <div className="product-container">
@@ -63,8 +69,8 @@ function ProductCardLiked({wishlistItem}) {
                                     <FavoriteBorderIcon style={{height: "20px",width: "20px"}}/>
                                 </div>
                             </button> */}
-                            <button className="cross-box">
-                                <div class="cross">
+                            <button className="cross-box" onClick={()=>removeWishHandler()}>
+                                <div className="cross">
                                     <span className="cross-icon">×</span>
                                 </div>
                             </button>

@@ -29,10 +29,13 @@ const reducerFunc=(state,action)=>{
           showSpecificBrand:action.payload
         }
       case "ADD_TO_WISH":
-        let prodIndex=state.wishlist.findIndex((item)=>item._id===action.payload._id);
           return{...state,
-            wishlist:prodIndex===-1?[...state.wishlist,{_id:action.payload._id,name:action.payload.name,price:action.payload.price,initialPrice:action.payload.initialPrice,ratingNo:action.payload.ratingNo,categoryName:action.payload.categoryName,stock:action.payload.stock,imageUrl:action.payload.imageUrl,reviews:action.payload.reviews,newProduct:action.payload.newProduct}]:[...state.wishlist]
+            wishlist:[...state.wishlist,action.payload]
           }
+      case "REMOVE_FROM_WISH":
+        return {...state,
+          wishlist:[...state.wishlist.filter(wishlistProd=>wishlistProd._id!==action.payload._id)]
+        }
       default:
         return state;  
     }
