@@ -10,45 +10,41 @@ const calcPercentOff=(initialPrice,price)=>{
 }
 
 function ProductCard({singleProd}) {
-  const [activation,setActivation]=useState(false)
+    const {state,dispatch}=useAllData();
+    const {
+        _id,
+        name,
+        price,
+        initialPrice,
+        ratingNo,
+        categoryName,
+        stock,
+        imageUrl,
+        reviews,
+        newProduct
+    } = singleProd;
+  const isWishlist=state.wishlist.find(item=>item._id==_id)
   const styles={
       borderActivate:{
-          display:activation?"none":"block",
-        //   color:activation?"red":"",
+          display:isWishlist?"none":"block",
       },
       fillActivate:{
-          display:activation?"block":"none",
-          color:activation?`var(--dark-red2)`:"",
+          display:isWishlist?"block":"none",
+          color:isWishlist?`var(--dark-red2)`:"",
       },
       size:{height: "20px",width: "20px"}
   }
 
   const likeHandler=()=>{
       console.log(state.wishlist)
-      let prodIndex=state.wishlist.find((item)=>item._id===_id)
-      if(prodIndex){
+      if(isWishlist){
         dispatch({type:"REMOVE_FROM_WISH",payload:singleProd})
-        setActivation(prevActivation=>!prevActivation)
       }else {
         dispatch({type:"ADD_TO_WISH",payload:singleProd})
-        setActivation(prevActivation=>!prevActivation)  
       }
   }
   
 
-  const {state,dispatch}=useAllData();
-  const {
-    _id,
-    name,
-    price,
-    initialPrice,
-    ratingNo,
-    categoryName,
-    stock,
-    imageUrl,
-    reviews,
-    newProduct
-  } = singleProd;
   return (
         <div key={_id} className="product">
                     <div className="product-container">
@@ -75,8 +71,8 @@ function ProductCard({singleProd}) {
                                     </div>
                                 </span>
                             </div>
-
-                            <button className="like-box" onClick={()=>likeHandler()} >
+ 
+                            <button className="like-box" onClick={()=>{stock&&likeHandler()}} >
                                 <div className="like">
                                     <FavoriteBorderIcon style={styles.borderActivate}/>
                                     <FavoriteIcon style={styles.fillActivate} />
