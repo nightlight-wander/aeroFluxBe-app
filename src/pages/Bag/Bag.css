@@ -1,4 +1,5 @@
 @import url("https://wildflowerui.netlify.app/pages/components/Cards/cards.css");
+@import url("https://wildflowerui.netlify.app/pages/components/Button/button.css");
 
 .cols2-grid-cart{
     display: grid;
@@ -13,6 +14,7 @@
 
 .left-cart{
     grid-area: left-cart;
+    margin-bottom: 4rem;
 }
 
 .right-cart{
@@ -218,6 +220,10 @@
     width: 12px;
 }
 
+.product-hz{
+    position: relative;
+}
+
 .product-content-hz{
     padding: 1.6rem;
 
@@ -228,6 +234,8 @@
     height: 4rem;
     background-color: var(--blackl1);
     border-radius: 50%;
+    top: 0.6rem;
+    right: 0.7rem;
 }
 
 .cross-icon {
@@ -236,3 +244,4 @@
     height: 2rem;
     color: var(--gold1);
 }
+

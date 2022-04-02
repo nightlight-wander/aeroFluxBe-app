@@ -36,7 +36,6 @@ function ProductCard({singleProd}) {
   }
 
   const likeHandler=()=>{
-      console.log(state.wishlist)
       if(isWishlist){
         dispatch({type:"REMOVE_FROM_WISH",payload:singleProd})
       }else {
@@ -71,6 +70,7 @@ function ProductCard({singleProd}) {
                                     </div>
                                 </span>
                             </div>
+
  
                             <button className="like-box" onClick={()=>{stock&&likeHandler()}} >
                                 <div className="like">

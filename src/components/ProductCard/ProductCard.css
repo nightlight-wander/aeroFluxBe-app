@@ -63,3 +63,13 @@ button.like-box{
 .product-meta-info .product-strike{
     padding-left: 4px;
 }
+
+
+.btn-primary>.cart-i {
+    padding-right: 2rem;
+    transition: transform .3s ease-in-out;
+}
+
+.btn-primary:hover .cart-i {
+    transform: translateX(5px);
+}

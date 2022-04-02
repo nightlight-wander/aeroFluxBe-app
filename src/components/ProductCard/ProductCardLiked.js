@@ -33,10 +33,17 @@ function ProductCardLiked({wishlistItem}) {
     newProduct
   } = wishlistItem;
   const {state,dispatch}=useAllData();
+  const isBag=state.bag.find(item=>item._id==_id)
   const removeWishHandler=()=>{
-    console.log('clicked')
     dispatch({type:"REMOVE_FROM_WISH",payload:wishlistItem})
   };
+  const addBagHandler=()=>{
+      console.log("baggg")
+      if(!isBag){
+        dispatch({type:"ADD_TO_BAG",payload:wishlistItem})
+        dispatch({type:"REMOVE_FROM_WISH",payload:wishlistItem})
+      }
+  }
   return (
         <div key={_id} className="product">
                     <div className="product-container">
@@ -50,7 +57,7 @@ function ProductCardLiked({wishlistItem}) {
                                             alt={name}/>
                                         </div>
                                     </div>
-                                    {newProduct && <div className="prod-imgTag">New</div>}
+                                    {newProduct && <div className="prod-imgTag flex-vCenter">New</div>}
                                     {!stock && <div className="prod-imgTagBlur">OUT OF STOCK</div>}
                                 </div>
                             </a>
@@ -87,8 +94,8 @@ function ProductCardLiked({wishlistItem}) {
 
                             </div>
                         </div>
-                        <button className="btn btn-primary btn-icon">
-                            <span className="cart-icon"><ShoppingCartOutlinedIcon style={{fontSize:"2rem"}}/>ADD TO CART</span>
+                        <button className="btn btn-primary btn-icon" onClick={addBagHandler}>
+                            <span className="cart-icon"><ShoppingCartOutlinedIcon className="cart-i" style={{fontSize:"2rem"}}/>ADD TO CART</span>
                         </button>
                     </div>
                 </div>

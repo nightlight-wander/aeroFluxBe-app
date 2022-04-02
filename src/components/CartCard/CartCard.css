@@ -1,0 +1,31 @@
+.btn-grad{
+    width: 12em;
+    height: 2em;
+    border-radius: 1px;
+    font-size: 1.6rem;
+    font-weight: 550;
+    background-color: var(--yellowgold);
+    color: var(--gold1);
+    border: 1px solid var(--yellowGold);
+    margin: 2rem 0 0 0;
+}
+
+.btn-grad::before{
+    height: 2em;
+    border-radius: 1px;
+    background-image:linear-gradient(to right,var(--pink5) 0%,var(--dark-red1) 100%);
+}
+
+.btn-grad:hover::before{
+    width: 12em;
+}
+
+.btn-grad:hover{
+    box-shadow: none;
+}
+
+.btn-grad span{
+    color: var(--gold1);
+    padding-right: 0.5rem;
+}
+

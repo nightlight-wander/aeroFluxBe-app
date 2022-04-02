@@ -6,8 +6,6 @@ import { useAllData } from '../../context/AllDataContext';
 import "./Wishlist.css";
 function Wishlist() {
   const {state:{wishlist}}=useAllData();
-  // console.log(wishlist)
-  // const {wishlist}=state;
   return (
     <div className="wishlistGrid-wrapper rows3-grid">
       <Header/>
