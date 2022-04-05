@@ -47,7 +47,7 @@ const reducerFunc=(state,action)=>{
       }
       case "INCREASE_QTY":
       return {...state,
-      bag:[...state.bag.map(item=>item._id===action.payload._id?{...item,qty:item.qty+1}:{item})]
+      bag:[...state.bag.map(item=>item._id===action.payload._id?{...item,qty:item.qty+1}:{...item})]
       }
       case "DECREASE_QTY":
       return {...state,
