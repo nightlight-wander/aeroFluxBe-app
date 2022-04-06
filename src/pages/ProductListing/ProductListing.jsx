@@ -10,7 +10,7 @@ import { useAllData } from '../../context/AllDataContext';
 import { FetchProdsCats } from '../../utilities/fetchProdsCats';
 import { sortProducts, filterByBrand, filterByPrice } from '../../utilities/filterFuncs'
 
-function ProductListing() {
+function ProductListing() { 
   const { state } = useAllData();
   FetchProdsCats();
   const { products, sortBy, showSpecificBrand, showPriceRange } = state;
