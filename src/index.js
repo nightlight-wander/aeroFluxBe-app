@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom";
-import { AllDataProvider } from "./context/AllDataContext";
+import { AllDataProvider } from "context/AllDataContext";
 
 // Call make Server
 makeServer();

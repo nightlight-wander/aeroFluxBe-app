@@ -5,7 +5,7 @@ import NavigateNextOutlinedIcon from '@mui/icons-material/NavigateNextOutlined';
 import NavigateBeforeOutlinedIcon from '@mui/icons-material/NavigateBeforeOutlined';
 import NightlightOutlinedIcon from '@mui/icons-material/NightlightOutlined';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import { Header } from '../../components/Header/Header';
+import { Header } from 'components/Header/Header';
 
 function Home() {
   return (
