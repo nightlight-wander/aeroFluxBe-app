@@ -15,7 +15,8 @@ function CartCard({bagItem}) {
         imageUrl,
         qty
     } = bagItem;
-    const isWishlist=state.wishlist.find(item=>item._id==_id)
+    const isWishlist=state.wishlist.find(item=>item._id===_id)
+    
     const calcPercentOff=(initialPrice,price)=>{
         return Math.floor((initialPrice-price)*100/price)
     }
@@ -28,17 +29,13 @@ function CartCard({bagItem}) {
     const removeBagHandler=()=>{
         dispatch({type:"REMOVE_FROM_BAG",payload:bagItem})
     }
+    const decreaseQty=()=>{
+        dispatch({type:"DECREASE_QTY",payload:bagItem})
+    }
     const increaseQty=()=>{
-        // console.log(_id)
-        // state.bag.map(item=>{
-        //     if(item._id===_id){
-               
-        //         // return {...item,qty:item.qty+1}
-        //     }
-        // }       
-        // )
         dispatch({type:"INCREASE_QTY",payload:bagItem})
     }
+
   return(
                 <div className="product-hz">
                     <div className="product-container-hz">
@@ -80,7 +77,7 @@ function CartCard({bagItem}) {
                                         <div className="product-qty">
                                             <span><button className="plus-btn" onClick={increaseQty}>+</button></span>
                                             <span className="qty">{qty}</span>
-                                            <span><button className="minus-btn" onClick={()=>dispatch({type:"DECREASE_QTY",payload:bagItem})}>-</button></span>    
+                                            <span><button className="minus-btn" onClick={decreaseQty}>-</button></span>    
                                         </div>
                                         {/* <div className="product-baseMsg">
                                             <span className="base-icon tick-icon">&#10003;</span>

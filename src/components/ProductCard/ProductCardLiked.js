@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {Link} from 'react-router-dom';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import './ProductCard.css' ;
 import { useAllData } from '../../context/AllDataContext';
@@ -11,15 +11,6 @@ const calcPercentOff=(initialPrice,price)=>{
 
 
 function ProductCardLiked({wishlistItem}) {
-//   const[click,setClick]=useState(false)
-//   const styles={
-//       like:{
-//           backgroundColor:click?"black":""
-//       }
-//   }
-//   const likeHandler=()=>{
-//       return setClick(true);
-//   }
   const {
     _id,
     name,
@@ -33,7 +24,7 @@ function ProductCardLiked({wishlistItem}) {
     newProduct
   } = wishlistItem;
   const {state,dispatch}=useAllData();
-  const isBag=state.bag.find(item=>item._id==_id)
+  const isBag=state.bag.find(item=>item._id===_id)
   const removeWishHandler=()=>{
     dispatch({type:"REMOVE_FROM_WISH",payload:wishlistItem})
   };
@@ -48,7 +39,7 @@ function ProductCardLiked({wishlistItem}) {
         <div key={_id} className="product">
                     <div className="product-container">
                         <div className="product-content">
-                            <a href="#">
+                            <Link to="#">
                                 <div className="prod-img-bottom-extra">
                                     <div className="prod-img-box">
                                         <div className="prod-img" style={{height: "170px",width: "200px",maxInlineSize:"100%",objectFit:"contain"}}>
@@ -60,7 +51,7 @@ function ProductCardLiked({wishlistItem}) {
                                     {newProduct && <div className="prod-imgTag flex-vCenter">New</div>}
                                     {!stock && <div className="prod-imgTagBlur">OUT OF STOCK</div>}
                                 </div>
-                            </a>
+                            </Link>
                             <div className="product-ratings-container">
                                 <span>{ratingNo}</span>
                                 <span className="star-icon"> <StarBorderIcon /></span>
@@ -82,8 +73,8 @@ function ProductCardLiked({wishlistItem}) {
                                 </div>
                             </button>
                             <div className="product-meta-info">
-                                <h3 className="product-type"><a href="#">{name}</a></h3>
-                                <h4 className="product-name"><a href="#">{categoryName}</a></h4>
+                                <h3 className="product-type"><Link to="#">{name}</Link></h3>
+                                <h4 className="product-name"><Link to="#">{categoryName}</Link></h4>
                                 <div className="product-price">
                                     <span>
                                         <span className="product-discount-price">{price}</span>

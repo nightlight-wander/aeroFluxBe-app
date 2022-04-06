@@ -42,7 +42,6 @@ function Filters() {
     <div className="filters-margins filtersCheck-wrapper">
         <span className="filters-childHeader">SORT BY</span>
         <ul className="filters-childList">
-        {/* <li><input className="radioInput" type="radio" name="sort" value="Recommended" checked={sortBy && sortBy==="RECOMMENDED"} onChange={()=>dispatch({type:"SORT",payload:"RECOMMENDED"})}/>Recommended</li> */}
         <li><input className="radioInput" type="radio" name="sort" value="Price-low-to-high" checked={sortBy && sortBy==="PRICE_LOW_TO_HIGH"} onChange={()=>dispatch({type:"SORT",payload:"PRICE_LOW_TO_HIGH"})}/>Low to High</li>
         <li><input className="radioInput" type="radio" name="sort" value="Price-high-to-low" checked={sortBy && sortBy==="PRICE_HIGH_TO_LOW"} onChange={()=>dispatch({type:"SORT",payload:"PRICE_HIGH_TO_LOW"})}/>High To Low</li>
         </ul>

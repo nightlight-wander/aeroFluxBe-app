@@ -8,18 +8,18 @@ import "../../styles/reset.css";
 import "../../styles/common.css";
 import "./Header.css";
 
-function Header({category,setCategory}) {
+function Header() {
   return (
-        <div className="header flex-vCenter">
-            <LogoHead/>
-            <CatLinksHead category={category} setCategory={setCategory}/>
-            <label htmlFor="nav-toggle" className="nav-toggle-label">
-    <span></span>
-</label>
-            <SearchHead/>
-            <ActionsHead/>
-        </div>
+    <div className="header flex-vCenter">
+      <LogoHead />
+      <CatLinksHead />
+      <label htmlFor="nav-toggle" className="nav-toggle-label">
+        <span></span>
+      </label>
+      <SearchHead />
+      <ActionsHead />
+    </div>
   )
 }
 
-export {Header};
+export { Header };
