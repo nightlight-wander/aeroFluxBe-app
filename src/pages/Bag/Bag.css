@@ -1,0 +1,247 @@
+@import url("https://wildflowerui.netlify.app/pages/components/Cards/cards.css");
+@import url("https://wildflowerui.netlify.app/pages/components/Button/button.css");
+
+.cols2-grid-cart{
+    display: grid;
+    width: 100%;
+    grid-gap: 2rem;
+    grid-template-columns:minmax(2rem,1fr) 2fr 1.5fr minmax(2rem,0.5fr);
+    grid-template-areas:
+        "... left-cart right-cart ...";
+    
+    
+}
+
+.left-cart{
+    grid-area: left-cart;
+    margin-bottom: 4rem;
+}
+
+.right-cart{
+    grid-area: right-cart;
+}
+
+.cart-main{
+    padding-top: 5rem;
+}
+
+.check-box .check-input{
+    font-size:1.2rem;
+    color: var(--pink5);
+}
+
+.location-wrapper{
+    color: var(--gold1);
+    border:2px solid var(--blackl1);
+    border-radius: 0.4rem;
+    padding: 1rem;
+}
+
+.location-infoBox{
+    font-size: 1.5rem;
+}
+
+.productActions-wrapper{
+    justify-content: space-between;
+    padding: 1rem;
+    color: var(--gold1);
+    border:2px solid var(--blackl1);
+    border-radius: 0.4rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+
+
+.noBorder-btn{
+    color: var(--pink5);
+    font-weight: 600;
+    padding: 0.8rem;
+}
+
+.noBorder-btn:hover{
+    color: var(--yellowGold);
+}
+
+.wishlist-btn{
+    border-left:1px solid var(--blackl1) ;
+}
+
+.btn-outline{
+    border: 1px solid var(--light-red);
+    color: var(--light-red);
+    border-radius: 0.2rem;
+}
+.btn-small{
+    padding: 0.6rem 0.8rem;
+    font-size: 1.5rem;
+}
+
+.product-hz{
+    width: 100%;
+    margin: 1rem 0 0 0;
+}
+
+.product-container-hz{
+    padding: 1rem;
+    border: 1px solid var(--blackl1);
+    border-radius: 0.4rem
+}
+
+.addProducts{
+    border: 1px solid var(--blackl1);
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--gold1);
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+}
+
+.addProducts-message{
+    margin-left: 1.5rem;
+    font-weight: 500;
+}
+
+.wishAdd-next{
+    color: var(--gold1);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.right-cart{
+    color: var(--gold1);
+    font-size: 1.5rem;
+}
+
+.prices-display{
+    border: 1px solid var(--blackl1);
+    padding: 1rem;
+}
+
+.coupons-btn{
+    padding: 0.1rem 1rem;
+    cursor: pointer;
+}
+
+.coupons-head{
+    color: var(--tomatoOrange);
+}
+.coupons-apply{
+    justify-content: space-between;
+    border-bottom: 1px solid var(--blackl1);
+    padding-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.cardsPrice-wrapper{
+    margin-top: 2rem;
+}
+
+.cardsPrice-heading{
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: var(--gold1);
+    border-bottom: 1px solid var(--blackl1);
+    padding-bottom:0.4rem ;
+    margin-bottom: 0.8rem;
+}
+.priceSummary-row,.priceTotal-row{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+.priceTotal-row{
+    font-weight: 600;
+    padding-top: 1rem 0;
+}
+
+.btn-primary{
+    padding: 0.8rem 1.4rem;
+    font-size: 1.7rem;
+    color: var(--gold1);
+    background-color: var(--dark-red1);
+    border-radius: 0rem;
+    width: 88%;
+    margin: 0.6rem 0;
+    text-transform: capitalize;
+    text-transform: uppercase;
+}
+
+.down-btn{
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    margin: 0;
+    color: var(--gold1);
+    font-weight: 600;
+}
+
+.btn-round{
+    background-color: var(--gold1);
+}
+
+.product-content-hz a {
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.check-box{
+    top: 4px;
+    left: 4px;
+}
+
+.product-discount-price,.product-strike{
+    color: var(--gold1);
+}
+
+.product-sizeQty{
+    color: var(--gold1);
+}
+
+.product-qty .qty{
+    padding: 0 1rem;
+}
+
+.product-qty button{
+    color: var(--dark-red1);
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.product-qty{
+    display: flex;
+    align-items: center;
+    padding: 0.2rem 1rem;
+}
+
+.check-box svg{
+    height: 12px;
+    width: 12px;
+}
+
+.product-hz{
+    position: relative;
+}
+
+.product-content-hz{
+    padding: 1.6rem;
+
+}
+
+.cross-box {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--blackl1);
+    border-radius: 50%;
+    top: 0.6rem;
+    right: 0.7rem;
+}
+
+.cross-icon {
+    font-size: 2.8rem;
+    width: 2rem;
+    height: 2rem;
+    color: var(--gold1);
+}
+
