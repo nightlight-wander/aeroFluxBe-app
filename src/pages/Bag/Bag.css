@@ -7,7 +7,7 @@
     grid-gap: 2rem;
     /* grid-template-columns:minmax(2rem,1fr) 2fr 1.5fr minmax(2rem,0.5fr); */
     grid-template-areas:
-        "left-cart right-cart";
+        ".. left-cart right-cart ..";
     
     
 }
@@ -22,7 +22,7 @@
 }
 
 .cart-main{
-    padding: 5rem 10% 2rem;
+    padding-top: 5rem;
 }
 
 .check-box .check-input{
