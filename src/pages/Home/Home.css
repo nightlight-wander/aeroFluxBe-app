@@ -214,16 +214,10 @@ button .before-icon{
 
     .carousel .link-cta {
         width: 10rem;
-        /* border: 2px solid var(--white);
+        border: 2px solid var(--white);
         border-radius: 0.5rem;
         background-color: var(--white);
-        color: var(--blue-purple); */
-        font-weight: 200;
-        font-size: 1rem;
-    }
-
-    .explore-child-item .b0-cta{
-        width: 11rem;
+        color: var(--blue-purple);
         font-weight: 200;
         font-size: 1rem;
     }
@@ -232,7 +226,7 @@ button .before-icon{
         margin-bottom: 0.2rem;
     }
     
-    .carousel .link-cta,.b0-cta span{
+    .carousel .link-cta span{
         padding: 0.2rem 0.4rem;
        
     }
