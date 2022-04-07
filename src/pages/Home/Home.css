@@ -1,14 +1,18 @@
 /* slider */
-.slide img{
+.carousel img{
     width: 1519px;
+    width: 100%;
     height: 800px;
+    height: auto;
     object-fit: cover;
     object-position: center;
 }
 
 .carousel{
     width: 1519px;
+    width: 100%;
     height: 800px;
+    height: auto;
     position: relative;
 }
 
@@ -142,6 +146,8 @@ button .before-icon{
     padding-top: 5rem;
     font-size: 100%;
     vertical-align: baseline;
+    display: flex;
+    flex-grow: 1;
 }
 
 .explore-content{
@@ -186,8 +192,55 @@ button .before-icon{
     color: var(  --dark-blue-purple1);
 }
 
-.slider-grid{
-    display: grid;
-    grid-template-areas: minmax(20rem,1fr);
+@media only screen and (max-width:1100px){
+    /* .main-product-content{
+        flex-direction: row;
+    } */
+
+    .sp-h3{
+        font-size:1rem;
+        font-weight:200;
+        margin-bottom:0.5rem;
+    }
+    
+    .sp-h1{
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin-bottom:0.8rem ;
+    }
+    
+    .sp-text{
+        display: none;
+    }
+
+    .carousel .link-cta {
+        width: 10rem;
+        border: 2px solid var(--white);
+        border-radius: 0.5rem;
+        background-color: var(--white);
+        color: var(--blue-purple);
+        font-weight: 200;
+        font-size: 1rem;
+    }
+
+    .cta-btns-box .link-cta {
+        margin-bottom: 0.2rem;
+    }
+    
+    .carousel .link-cta span{
+        padding: 0.2rem 0.4rem;
+       
+    }
+
+    .carousel img{
+        width: 100%;
+        height: 300px;
+    }
+    
+    .carousel{
+        width: 100%;
+        height: 300px;
+    }
+
 }
 

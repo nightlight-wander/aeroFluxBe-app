@@ -13,7 +13,7 @@ function Home() {
     return (
         <div>
             <Header />
-            <section aria-label="drone-slider slider-grid">
+            <section aria-label="drone-slider ">
                 <div className="carousel">
                     <button data-carousel-button>
                         <span className=" next-icon"><NavigateNextOutlinedIcon style={{ width: "4rem", height: "4rem" }} />
@@ -24,30 +24,27 @@ function Home() {
                         </span>
                     </button>
 
-                    <ul>
-                        <li className="slide" data-active>
-                            <div className="main-product-content">
-                                <div className="product-content-box flex-center">
-                                    <h3 className="sp-h3">Flagship Camera Drone</h3>
-                                    <h1 className="sp-h1">DJI MAVIC 3</h1>
-                                    <p className="sp-text">Capture Above Everything</p>
-                                </div>
-                                <div className="cta-btns-box">
-                                    <Link to="#" className="link-cta">
-                                        <span className="cta-text">Learn More</span>
-                                        <span className=" next-icon "><NavigateNextOutlinedIcon />
-                                        </span>
-                                    </Link>
-                                    <Link to="#" className="link-cta">
-                                        <span className="cta-text">Buy Now</span>
-                                        <span className=" next-icon "><NavigateNextOutlinedIcon />
-                                        </span>
-                                    </Link>
-                                </div>
-                            </div>
-                            <img src="https://www1.djicdn.com/cms/uploads/150ef84c5f79da0f3cee8788b203e5b9.jpg" alt="drone-img1" loading="lazy" />
-                        </li>
-                    </ul>
+                    <div className="main-product-content">
+                        <div className="product-content-box flex-center">
+                            <h3 className="sp-h3">Flagship Camera Drone</h3>
+                            <h1 className="sp-h1">DJI MAVIC 3</h1>
+                            <p className="sp-text">Capture Above Everything</p>
+                        </div>
+                        <div className="cta-btns-box">
+                            <Link to="#" className="link-cta">
+                                <span className="cta-text">Learn More</span>
+                                <span className=" next-icon "><NavigateNextOutlinedIcon />
+                                </span>
+                            </Link>
+                            <Link to="#" className="link-cta">
+                                <span className="cta-text">Buy Now</span>
+                                <span className=" next-icon "><NavigateNextOutlinedIcon />
+                                </span>
+                            </Link>
+                        </div>
+                    </div>
+                    <img src="https://www1.djicdn.com/cms/uploads/150ef84c5f79da0f3cee8788b203e5b9.jpg" alt="drone-img1" loading="lazy" />
+
                 </div>
             </section>
 
