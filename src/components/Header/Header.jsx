@@ -12,6 +12,7 @@ function Header() {
   return (
     <div className="header flex-vCenter">
       <LogoHead />
+      <input type="checkbox" id="nav-toggle" className="nav-toggle"></input>
       <CatLinksHead />
       <label htmlFor="nav-toggle" className="nav-toggle-label">
         <span></span>
