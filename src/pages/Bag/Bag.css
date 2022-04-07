@@ -5,7 +5,7 @@
     display: grid;
     width: 100%;
     grid-gap: 2rem;
-    grid-template-columns:minmax(2rem,1fr) 2fr 1.5fr minmax(2rem,0.5fr);
+    /* grid-template-columns:minmax(2rem,1fr) 2fr 1.5fr minmax(2rem,0.5fr); */
     grid-template-areas:
         "... left-cart right-cart ...";
     
