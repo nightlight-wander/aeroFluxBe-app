@@ -26,8 +26,8 @@ function Home() {
 
                     <div className="main-product-content">
                         <div className="product-content-box flex-center">
-                            <h3 className="sp-h3">Flagship Camera Drone</h3>
-                            <h1 className="sp-h1">DJI MAVIC 3</h1>
+                            <h3 className="sp-h3 sp-h3-main">Flagship Camera Drone</h3>
+                            <h1 className="sp-h1 sp-h1-main">DJI MAVIC 3</h1>
                             <p className="sp-text">Capture Above Everything</p>
                         </div>
                         <div className="cta-btns-box">

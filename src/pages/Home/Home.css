@@ -160,6 +160,9 @@ button .before-icon{
     font-size: 4rem;
     text-align: center;
     font-weight: 600;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .explore-child-list{
@@ -189,21 +192,17 @@ button .before-icon{
     width: 95%;
     top: 4rem;
     font-size: 1rem;
-    color: var(  --dark-blue-purple1);
+    color: var(--blue-purple-light);
 }
 
 @media only screen and (max-width:1100px){
-    /* .main-product-content{
-        flex-direction: row;
-    } */
-
-    .sp-h3{
+    .sp-h3-main{
         font-size:1rem;
         font-weight:200;
         margin-bottom:0.5rem;
     }
     
-    .sp-h1{
+    .sp-h1-main{
         font-size: 1.2rem;
         font-weight: 300;
         margin-bottom:0.8rem ;
@@ -215,10 +214,16 @@ button .before-icon{
 
     .carousel .link-cta {
         width: 10rem;
-        border: 2px solid var(--white);
+        /* border: 2px solid var(--white);
         border-radius: 0.5rem;
         background-color: var(--white);
-        color: var(--blue-purple);
+        color: var(--blue-purple); */
+        font-weight: 200;
+        font-size: 1rem;
+    }
+
+    .explore-child-item .b0-cta{
+        width: 11rem;
         font-weight: 200;
         font-size: 1rem;
     }
@@ -227,7 +232,7 @@ button .before-icon{
         margin-bottom: 0.2rem;
     }
     
-    .carousel .link-cta span{
+    .carousel .link-cta,.b0-cta span{
         padding: 0.2rem 0.4rem;
        
     }
@@ -240,6 +245,10 @@ button .before-icon{
     .carousel{
         width: 100%;
         height: 300px;
+    }
+
+    .explore-child-list .explore-title{
+        margin-bottom: 2rem;
     }
 
 }
