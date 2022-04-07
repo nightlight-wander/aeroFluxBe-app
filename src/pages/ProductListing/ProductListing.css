@@ -38,7 +38,7 @@ footer {
     grid-gap: 2rem;
     grid-template-columns: 23rem 1fr;
     grid-template-areas:
-        "side-col content-col content-col content-col";
+        "side-col content-col";
     
 }
 

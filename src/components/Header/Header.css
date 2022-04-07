@@ -351,9 +351,7 @@ button .before-icon{
     .search-bar:focus-within {
         width: 75%;
     }
-    .search-bar:focus-within ~.nav-toggle-label span{
-        display: none;
-    }
+    
     header {
         display: grid;
         grid-template-columns: 1fr;
