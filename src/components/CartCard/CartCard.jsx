@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import CheckIcon from '@mui/icons-material/Check';
 import "./CartCard.css";
 import {useAllData} from "../../context/AllDataContext";
@@ -41,7 +42,7 @@ function CartCard({bagItem}) {
                     <div className="product-container-hz">
                         <div className="product-content-hz product-hx">
                             <div className="right-card">
-                                <a href="#">
+                                <Link to="#">
                                     <div className="prod-img-bottom-extra">
                                         <div className="prod-img-box-hz">
                                         <div className="prod-img-hz" style={{height: "170px",width: "200px",maxInlineSize:"100%"}}>
@@ -55,7 +56,7 @@ function CartCard({bagItem}) {
                                         <span className=" check-input"><CheckIcon/>
                                         </span>
                                     </button>
-                                </a>
+                                </Link>
                                 <button className="cross-box" onClick={()=>removeBagHandler()}>
                                     <div className="cross">
                                         <span className="cross-icon">×</span>
@@ -64,8 +65,8 @@ function CartCard({bagItem}) {
                             </div>
                             <div className="left-info">
                                 <div className="product-meta-info">
-                                    <h3 className="product-type"><a href="#">{name}</a></h3>
-                                    <h4 className="product-name"><a href="#">{categoryName}</a></h4>
+                                    <h3 className="product-type"><Link to="#">{name}</Link></h3>
+                                    <h4 className="product-name"><Link to="#">{categoryName}</Link></h4>
                                     <div className="product-price">
                                         <span>
                                             <span className="product-discount-price">{price}</span>
