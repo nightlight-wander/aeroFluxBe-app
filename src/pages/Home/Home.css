@@ -80,22 +80,31 @@ button .before-icon{
     text-align: end;
 }
 
+.cta-btns-box .link-cta{
+    margin-right: 1rem;
+}
+
+.cta-btns-box .cta-text,.next-icon{
+    color: var(--pink8);
+}
+
+
 .sp-h3{
-    font-size:2rem;
-    font-weight: 600;
+    font-size:1.8rem;
+    font-weight: 500;
     margin-bottom:1rem;
 }
 
 .sp-h1{
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-weight: 600;
-    line-height: 3rem;
-    margin-bottom:2rem ;
+    line-height: 2rem;
+    margin-bottom:1.5rem ;
 }
 
 .sp-text{
-    font-size:1.6rem ;
-    font-weight: 580;
+    font-size:1.8rem ;
+    font-weight: 600;
     margin-bottom:1rem;
 }
 
@@ -111,8 +120,17 @@ button .before-icon{
    
 }
 
-.link-cta:hover{
-    background-color: var(--sky-blue);
+.cta-btns-box .link-cta:hover{
+    background-color: var(--blackl1);
+}
+
+.explore-child-item .b0-cta{
+    width: 15rem;
+    font-weight: 500;
+}
+
+.explore-child-item .b0-cta:hover{
+    background-color: var(--sky-blue1);
 }
 
 /* slider ends */
@@ -162,39 +180,14 @@ button .before-icon{
 
 .explore-child-item .explore-child-content{
     position: absolute;
-    width: 100%;
+    width: 95%;
     top: 4rem;
-    color: var(--black);
+    font-size: 1rem;
+    color: var(  --dark-blue-purple1);
 }
 
-/* .footer{
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    padding: 2rem 0 2rem 0;
-    color:var(--pink8);
-    font-weight: 600;
-    font-size: 2rem;
-    align-items: center;
-    padding-right:2rem ;
-    border-top: 1px solid var(--blackl1);
+.slider-grid{
+    display: grid;
+    grid-template-areas: minmax(20rem,1fr);
 }
 
-.git-icon{
-    color:var(--pink8);
-    padding-left:2rem;
-} */
-
-
-/* style={{
-    marginTop: "2rem",
-    display: "flex",
-    justifyContent: "center",
-    padding: "2rem 0 2rem 0",
-    backgroundColor: "var(--pink8bg)",
-    color: "var(--pink8)",
-    fontWeight: 600,
-    fontSize: "2rem",
-    alignItems: "center",
-    paddingRight: "2rem",
-    borderTop: "1px solid var(--blackl1)"}} */
