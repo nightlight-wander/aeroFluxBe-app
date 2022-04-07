@@ -3,7 +3,7 @@
     width: 100%;
     grid-template-columns:repeat(autofill);
     grid-template-areas:
-        ".. wishlist-wrapper wishlist-wrapper ..";  
+        "wishlist-wrapper wishlist-wrapper";  
 }
 
 .wishlist-wrapper{

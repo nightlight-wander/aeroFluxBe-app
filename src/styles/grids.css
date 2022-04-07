@@ -8,9 +8,9 @@
     height: 100vh;
     grid-template-rows: 8rem 1fr 8rem;
     grid-template-areas:
-        "row-grid1 row-grid1 row-grid1 row-grid1"
-        "row-grid2 row-grid2 row-grid2 row-grid2"
-        "row-grid3 row-grid3 row-grid3 row-grid3";  
+        "row-grid1 "
+        "row-grid2  "
+        "row-grid3 ";  
 }
 
 
