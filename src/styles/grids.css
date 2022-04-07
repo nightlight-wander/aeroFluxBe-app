@@ -1,7 +1,7 @@
-.rows3-grid>* {
+/* .rows3-grid>* {
     display: flex;
     box-sizing: border-box;
-}
+} */
 
 .rows3-grid{
     display: grid;
