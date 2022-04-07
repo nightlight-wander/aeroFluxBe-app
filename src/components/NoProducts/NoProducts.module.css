@@ -1,15 +1,17 @@
 @import url("https://wildflowerui.netlify.app/pages/components/Button/button.css");
 
 .noProductsWrapper{
-    margin: 5% 20%; 
+    margin: 2% 30%;
 }
 
 .noProdsImg{
-   width: 100%;
-   height: auto;
+   max-width:80%;
+   height: 300px;
 }
 
-.link-cta{
+.linkCta{
     word-wrap: wrap;
     width: 20rem;
+    margin-left: 8rem;
 }
+
