@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+:root {
+  font-family: 'Poppins', sans-serif;
+  font-size: 62.5%;
+  --blue-light: #8abdff;
+  --purple: #5b0eeb;
+  --primary-purple: #5b0eeb;
+  /* --secondary:#394fe2;
+  --secondary-light:#054ab1; */
+
+  --white: #ffffff;
+  --white1:#f5f5f6;
+  --black: #000000;
+  --black1:rgba(0,0,0,.2);
+  --blackl1:rgba(68,68,68,.5);
+  --blackl2:rgba(0,0,0,.1);
+  --grey:#CCC;
+  --grey1: hsla(0,0%,100%,.8);
+  --grey2:hsla(0,8%,74%,.8);
+  --greyLight-1: #e4ebf5;
+  --starGrey:#b6c0cd;
+  --greyLight-2: #c8d0e7;
+  --greyLight-3: #bec8e4;
+  --greyDark: #9baacf;
+  --greySearch:#a5a2b5;
+
+  --blue-purple:#394fe2;
+  --blue-purple-light:#445ad5;
+  --dark-blue-purple1:#2740e0;
+  --dark-blue-purple2:#060e3f;
+  --shine-green-dark:#15fed8;
+  --shine-green-dark1:#027a66;
+  --shine-green:#91f3e3;
+
+  --sky-blue:#0d93ed;
+  --green:#23ea67;
+  --dark-red1:#c81e33;
+  --dark-red2:#c5091f;
+  --light-red:#ec4356;
+  --dark-red3:#cc061d;
+
+
+  --dull-pink:#ffaca2;
+  --dull-pink:#ebb4ae;
+
+  --tomatoOrange:rgb(255,99,71);
+  --coralOrange:rgb(255,127,80);
+  --yellowGold:rgb(255,215,0);
+
+
+  --pink1:#dbdcd7;
+	--pink2:#dddcd7;
+  --pink3:#e2c9cc;
+  --pink4:#e7627d;
+  --pink5:#b8235a;
+  --pink6:#801357;
+  --pink7:#3d1635;
+  --pink8:#1c1a27;
+  --pink8bg:#13101ef0;
+  --gold1:rgb(224, 203, 143);
+  --dullgold:#574f3b;
+
+  --box-shadow-primary-out:5px 5px 12px #120f1d,
+    -1px -1px 12px #141120;
+  --box-shadow-primary-in: inset -50px 50px 100px #0b0a10,
+    inset 50px -50px 100px #2d2a3e;
+
+}

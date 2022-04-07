@@ -1,0 +1,179 @@
+.loginGrids-wrapper>*{
+    box-sizing: border-box;
+}
+
+.rows3-grid{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 8rem 1fr 8rem;
+    grid-template-areas:
+        "row-grid1"
+        "row-grid2"
+        "row-grid3";  
+}
+
+.header {
+    grid-area: row-grid1;
+    color: var(--white);
+    background-color:var(--pink8bg);
+}
+
+main{
+    grid-area: row-grid2;
+    background-color:var(--pink8bg);
+}
+
+.tab-fullWrapper{
+    padding: 5rem 0 5rem 0;
+}
+
+footer {
+    grid-area: row-grid3;
+    justify-content: center;
+    background-color:var(--pink8bg);
+}
+
+.tab-wrapper{
+    height: 100%;
+    max-width: 90%;
+    background-color: var(--pink8);
+    color: var(--gold1);
+    box-shadow: var(--box-shadow-primary-out);
+}
+
+.tab-list li{
+    list-style: none;
+    width: 15rem;
+    text-align: center;
+    border-bottom: 2px solid var(--gold1);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.tab-list{
+    padding-top:2rem ;
+    gap: 10rem;
+}
+
+.tab-list li{
+    padding-bottom: 1rem;
+    text-decoration: none;
+    color: var(--white); 
+}
+
+.tab-list li:hover{
+    color: var(--tomatoOrange);
+}
+
+
+.input-wrapper{
+    position: relative;
+}
+
+.text-input,.text-label{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.input-wrapper .text-input{
+    margin-bottom: 1.6rem;
+    border: none;
+    outline-color: var(--gold1);
+    height: 3rem;
+    box-shadow: var(--box-shadow-primary-in);
+}
+
+.input-wrapper .text-label{
+    margin-bottom: 0.6rem;
+}
+
+.link-btn{
+    text-decoration: none;
+    color: var(--tomatoOrange);
+}
+
+.password-wrapper{
+    margin: 0 4rem 1rem 4rem;
+    justify-content: space-between;
+    font-size: 1.6rem;
+}
+
+.sign-link{
+    text-align: center;
+    padding-bottom:3rem ;
+}
+
+.sign-link a{
+    color: var(--gold1);
+    font-size: 1.8rem;
+    font-weight: 400;
+    border-bottom:1px solid var(--gold1) ;
+   
+}
+
+.eye-icon{
+    position: absolute;
+    top: 73.8%;
+    right: 5rem;
+    color: var(--tomatoOrange);
+    cursor: pointer;
+}
+.eye-icon1{
+  position: absolute;
+  top: 61.5%;
+  right: 5rem;
+  color: var(--tomatoOrange);
+  cursor: pointer;
+}
+
+.eye-icon2{
+    position: absolute;
+    top: 86.4%;
+    right: 5rem;
+    color: var(--tomatoOrange);
+    cursor: pointer;
+}
+
+/*Login Button CSS  */
+.btn-slide{
+    border: none;
+    width: 35rem;
+    max-width: 90%;
+    height: 2.1em;
+    border-radius: 2.1em;
+    font-size: 2rem;
+    font-family: inherit;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    border: 2px solid var(--gold1);
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.btn-slide::before{
+    content: "";
+    width: 0;
+    height: 2.2em;
+    border-radius: 2.1em;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-image: linear-gradient(to right,var(--pink8) 0%,var( --dullgold) 100%);
+    display: block;
+    transition: .5s ease;
+    z-index: -1;
+
+}
+
+.btn-slide:hover::before{
+    width: 40rem;
+}
+
+.sp-t{
+    margin: 2rem 4rem 0;
+}

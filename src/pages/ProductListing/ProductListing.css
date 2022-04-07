@@ -1,0 +1,100 @@
+.productGrid-wrapper>* {
+    display: flex;
+    box-sizing: border-box;
+}
+
+.rows3-grid{
+    display: grid;
+    height: 100vh;
+    /* grid-gap: 2rem; */
+    grid-template-rows: 8rem 1fr 8rem;
+    grid-template-areas:
+        "row-grid1 row-grid1 row-grid1 row-grid1"
+        "row-grid2 row-grid2 row-grid2 row-grid2"
+        "row-grid3 row-grid3 row-grid3 row-grid3";  
+}
+
+
+.header {
+    grid-area: row-grid1;
+    background-color:var(--pink8bg);
+}
+
+
+.products-main{
+    grid-area: row-grid2;
+    background-color:var(--pink8bg);
+    padding-top: 3rem;
+}
+
+footer {
+    grid-area: row-grid3;
+    justify-content: center;
+}
+
+.cols2-grid{
+    display: grid;
+    width: 100%;
+    grid-gap: 2rem;
+    grid-template-columns: 23rem 1fr;
+    grid-template-areas:
+        "side-col content-col content-col content-col";
+    
+}
+
+.cols2-grid .side-col{
+    grid-area: side-col;
+    position: sticky;
+    color: var(--gold1);
+}
+
+.cols2-grid .content-col{
+    grid-area: content-col;
+}
+
+.changePage{
+    padding: 1rem;
+    margin: 2rem 0 1rem 0;
+    gap: 1rem;
+
+}
+
+.page-index{
+    width: 4rem;
+    height: 4rem;
+    padding-top: 0.2rem;
+    font-weight: 600;
+    border: 0.2rem solid var(--gold1);
+    background-color: var(--gold1);
+    color: var(--pink8);
+    border-radius: 50%;
+
+}
+
+.footer{
+    padding: 4rem 0 4rem 0;
+    margin: 0;
+    background-color: var(--pink8bg);
+    color:var(--yellowGold);
+    font-weight: 600;
+    font-size: 2rem;
+    align-items: center;
+    padding-right:2rem ;
+    border-top: 1px solid var(--blackl1);
+}
+
+.git-icon{
+    color:var(--yellowGold);
+    padding-left:2rem;
+}
+
+main .content-col{
+    margin-top: 6rem;
+    margin-bottom: 7rem;
+}
+
+.content-col .changePage{
+    position: absolute;
+    margin-top:1rem;
+    left: 42%;
+}

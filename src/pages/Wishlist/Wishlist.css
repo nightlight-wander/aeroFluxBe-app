@@ -1,0 +1,21 @@
+.cols2-grid-wishlist{
+    display: grid;
+    width: 100%;
+    grid-template-columns:repeat(autofill);
+    grid-template-areas:
+        ".. wishlist-wrapper wishlist-wrapper ..";  
+}
+
+.wishlist-wrapper{
+    padding: 5rem 6rem 2rem;
+}
+
+
+.cart-icon{
+    display: flex;
+    align-items: center;
+}
+
+.cross-box:hover{
+    color:var(--gold1);
+}
