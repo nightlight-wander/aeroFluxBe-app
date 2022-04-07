@@ -310,46 +310,73 @@ button .before-icon{
 
 .nav-toggle-label{
     display: none;
+
+    
 }
 
 /* responsive navbar */
-/* @media only screen and (max-width:700px){
 
+@media only screen and (max-width:1500px) {
+    body {
+        font-size: 0.7rem;
+    }
+
+    .search-bar {
+        width: var(--size);
+        margin-left: auto;
+    }
+    .logo-head .logo-name{
+        display: none;
+    }
+
+    .logo-head .logo-img{
+        margin-left: 4rem;
+    }
+
+    .search-head{
+        margin-left: auto;
+    }
+
+    .search-input {
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .search-input:focus {
+        outline: 0;
+        opacity: 1;
+        cursor: initial;
+    }
+
+    .search-bar:focus-within {
+        width: 75%;
+    }
+    
     header {
         display: grid;
         grid-template-columns: 1fr;
         width: 100%;
     }
 
-    .nav-toggle {
+    .nav-toggle  {
         position: absolute !important;
         top: 50% !important;
-        background-color: var(--dark-red1);
+        left: 1px;
+        background-color: var(--sky-blue);
     }
 
-    .search-head{
-        display: none;
-    }
-
-    .actions-head .actions-icon{
-        display: none;
-    }
-
-    .logo-head{
-      display: none;
-    }
-
+    
     .nav-toggle-label {
         position: absolute;
         top: 0;
         left: 0;
-        margin-left: 0.1em;
+        margin-left: 1em;
         height: 100%;
         display: flex;
         align-items: center;
         min-width: 4rem;
     }
-
+    
     .nav-toggle-label span,
     .nav-toggle-label span::before,
     .nav-toggle-label span::after {
@@ -374,42 +401,17 @@ button .before-icon{
     .nav-toggle-label span::after {
         top: 7px;
     }
-
+    
     .catLinks-head {
         position: absolute;
         text-align: left;
         top: 100%;
         left: 0;
-        background: rgba(224,203,143,0.2);
+        background: var(--background);
+        /* width: 100%; */
         transform: scale(1, 0);
         transform-origin: top;
         transition: transform 400ms ease-in-out;
-    }
-
-    .cat-item .cat-link{
-        padding: 1rem ;
-    }
-
-
-    .actions-head{
-        position: absolute;
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        top: 24.5rem;
-        font-size: 1.4rem;
-        text-transform: uppercase;
-        display: flex;
-        gap: 1em;
-        padding-left:2.7rem;
-        background: rgba(224,203,143,0.2);
-        left: 0;
-    }
-
-    .actions-head .actions-title{
-        padding: 1rem;
-        font-size: 1.4rem;
-
     }
     
     .catLinks-head ul {
@@ -417,7 +419,8 @@ button .before-icon{
         padding: 0;
         list-style: none;
         display: block;
-        width: 100%;
+        background: var(--sky-blue1);
+        /* width: 100%; */
     }
     
     .catLinks-head li {
@@ -425,17 +428,49 @@ button .before-icon{
         margin-left: 1em;
     }
     
+    
+    .nav-toggle:checked~nav {
+        transform: scale(1, 1);
+    }
+    
+    .nav-toggle:checked~nav a {
+        opacity: 1;
+        transition: opacity 250ms ease-in-out 250ms;
+    }
+
+    .actions-head{
+        position: absolute;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        top: 31.8rem;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        display: flex;
+        gap: 1em;
+        padding-left:4rem;
+        /* width: 100%; */
+        background: var(--sky-blue1);
+        left: 0;
+        color: red;
+    }
+
+
+
+    .actions-head .actions-title{
+        padding: 1rem;
+        font-size: 1.4rem;
+        color: var(--white)
+
+    }
+
     .catLinks-head a,.actions-head{
-        color: var(--tomatoOrange);
+        color: var(--white);
         text-decoration: none;
         font-size: 1.2rem;
         text-transform: uppercase;
         opacity: 0;
         transition: opacity 150ms ease-in-out;
-    }
-    
-    .catLinks-head a:hover{
-        color: var(--dark-red1);
     }
     
     .nav-toggle:checked~nav {
@@ -451,4 +486,4 @@ button .before-icon{
         transition: opacity 250ms ease-in-out 250ms;
     }
 
-} */
+}

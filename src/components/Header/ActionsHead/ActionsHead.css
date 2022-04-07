@@ -1,0 +1,16 @@
+@import url("https://wildflowerui.netlify.app/pages/components/Avatar-badge/avatar-badge.css");
+
+.actions-head .wish-badge,.actions-head .bag-badge{
+    position: relative;
+}
+
+.status-badge{
+    bottom: 4.2rem;
+    right: 2.4rem;
+    border:2px solid var(--light-red);
+    background-color: var(--light-red);
+}
+
+.bag-status{
+    right: 1.6rem;
+}

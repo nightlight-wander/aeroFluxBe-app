@@ -1,14 +1,18 @@
 /* slider */
-.slide img{
+.carousel img{
     width: 1519px;
+    width: 100%;
     height: 800px;
+    height: auto;
     object-fit: cover;
     object-position: center;
 }
 
 .carousel{
     width: 1519px;
+    width: 100%;
     height: 800px;
+    height: auto;
     position: relative;
 }
 
@@ -80,22 +84,31 @@ button .before-icon{
     text-align: end;
 }
 
+.cta-btns-box .link-cta{
+    margin-right: 1rem;
+}
+
+.cta-btns-box .cta-text,.next-icon{
+    color: var(--pink8);
+}
+
+
 .sp-h3{
-    font-size:2rem;
-    font-weight: 600;
+    font-size:1.8rem;
+    font-weight: 500;
     margin-bottom:1rem;
 }
 
 .sp-h1{
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-weight: 600;
-    line-height: 3rem;
-    margin-bottom:2rem ;
+    line-height: 2rem;
+    margin-bottom:1.5rem ;
 }
 
 .sp-text{
-    font-size:1.6rem ;
-    font-weight: 580;
+    font-size:1.8rem ;
+    font-weight: 600;
     margin-bottom:1rem;
 }
 
@@ -111,8 +124,17 @@ button .before-icon{
    
 }
 
-.link-cta:hover{
-    background-color: var(--sky-blue);
+.cta-btns-box .link-cta:hover{
+    background-color: var(--blackl1);
+}
+
+.explore-child-item .b0-cta{
+    width: 15rem;
+    font-weight: 500;
+}
+
+.explore-child-item .b0-cta:hover{
+    background-color: var(--sky-blue1);
 }
 
 /* slider ends */
@@ -124,6 +146,8 @@ button .before-icon{
     padding-top: 5rem;
     font-size: 100%;
     vertical-align: baseline;
+    display: flex;
+    flex-grow: 1;
 }
 
 .explore-content{
@@ -136,6 +160,9 @@ button .before-icon{
     font-size: 4rem;
     text-align: center;
     font-weight: 600;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .explore-child-list{
@@ -162,39 +189,61 @@ button .before-icon{
 
 .explore-child-item .explore-child-content{
     position: absolute;
-    width: 100%;
+    width: 95%;
     top: 4rem;
-    color: var(--black);
+    font-size: 1rem;
+    color: var(--blue-purple-light);
 }
 
-/* .footer{
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    padding: 2rem 0 2rem 0;
-    color:var(--pink8);
-    font-weight: 600;
-    font-size: 2rem;
-    align-items: center;
-    padding-right:2rem ;
-    border-top: 1px solid var(--blackl1);
+@media only screen and (max-width:1100px){
+    .sp-h3-main{
+        font-size:1rem;
+        font-weight:200;
+        margin-bottom:0.5rem;
+    }
+    
+    .sp-h1-main{
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin-bottom:0.8rem ;
+    }
+    
+    .sp-text{
+        display: none;
+    }
+
+    .carousel .link-cta {
+        width: 10rem;
+        border: 2px solid var(--white);
+        border-radius: 0.5rem;
+        background-color: var(--white);
+        color: var(--blue-purple);
+        font-weight: 200;
+        font-size: 1rem;
+    }
+
+    .cta-btns-box .link-cta {
+        margin-bottom: 0.2rem;
+    }
+    
+    .carousel .link-cta span{
+        padding: 0.2rem 0.4rem;
+       
+    }
+
+    .carousel img{
+        width: 100%;
+        height: 300px;
+    }
+    
+    .carousel{
+        width: 100%;
+        height: 300px;
+    }
+
+    .explore-child-list .explore-title{
+        margin-bottom: 2rem;
+    }
+
 }
 
-.git-icon{
-    color:var(--pink8);
-    padding-left:2rem;
-} */
-
-
-/* style={{
-    marginTop: "2rem",
-    display: "flex",
-    justifyContent: "center",
-    padding: "2rem 0 2rem 0",
-    backgroundColor: "var(--pink8bg)",
-    color: "var(--pink8)",
-    fontWeight: 600,
-    fontSize: "2rem",
-    alignItems: "center",
-    paddingRight: "2rem",
-    borderTop: "1px solid var(--blackl1)"}} */

@@ -4,7 +4,6 @@
 
 .rows3-grid{
     display: grid;
-    height: 100vh;
     grid-template-rows: 8rem 1fr 8rem;
     grid-template-areas:
         "row-grid1"

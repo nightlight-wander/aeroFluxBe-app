@@ -5,13 +5,18 @@
 }
 
 .noProdsImg{
-   max-width:80%;
+   width:100%;
    height: 300px;
 }
 
-.linkCta{
+.noProductsWrapper .linkCta{
     word-wrap: wrap;
     width: 20rem;
-    margin-left: 8rem;
+    margin-bottom: 3rem;
+    color: var(--black);
+}
+
+.noProductsWrapper .linkCta:hover{
+    background-color: var(--blackl1);
 }
 
