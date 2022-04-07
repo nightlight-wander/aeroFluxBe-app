@@ -8,6 +8,7 @@ import "./ActionsHead.css"
 
 function ActionsHead() {
   const {state:{wishlist,bag}}=useAllData();
+  const bagLength=bag.length+bag.qty;
   return (
     <div className="actions-head flex-vCenter">
     <Link to="/login" className="user flex-col flex-vCenter">
@@ -22,7 +23,7 @@ function ActionsHead() {
     <Link to="/bag" className="bag bag-badge flex-col flex-vCenter">
         <span><ShoppingBagIcon/> </span>
         <span className="actions-title">Bag</span>
-        {bag.length>0?<span className="status-badge bag-status flex-center">{bag.length}</span>:null}
+        {bagLength>0?<span className="status-badge bag-status flex-center">{bagLength}</span>:null}
     </Link>
 </div>
   )
