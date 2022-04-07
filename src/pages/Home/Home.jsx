@@ -1,11 +1,10 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import "./Home.css";
 import "../../styles/utils.css";
 import NavigateNextOutlinedIcon from '@mui/icons-material/NavigateNextOutlined';
 import NavigateBeforeOutlinedIcon from '@mui/icons-material/NavigateBeforeOutlined';
-import NightlightOutlinedIcon from '@mui/icons-material/NightlightOutlined';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import { Header } from 'components/Header/Header';
+import { Header } from '../../components/Header/Header';
 
 function Home() {
   return (
@@ -31,64 +30,20 @@ function Home() {
                             <p className="sp-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maiores et eos eaque veritatis aut laboriosam earum dolorem iste atque.</p>
                         </div>
                         <div className="cta-btns-box">
-                            <a href="#" className="link-cta">
+                            <Link to="#" className="link-cta">
                                 <span className="cta-text">Learn More</span>
                                 <span className=" next-icon "><NavigateNextOutlinedIcon/>
                                 </span>
-                            </a>
-                            <a href="#" className="link-cta">
+                            </Link>
+                            <Link to="#" className="link-cta">
                                 <span className="cta-text">Buy Now</span>
                                 <span className=" next-icon "><NavigateNextOutlinedIcon/>
                                 </span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                     <img src="https://www1.djicdn.com/cms/uploads/150ef84c5f79da0f3cee8788b203e5b9.jpg" alt="drone-img1" loading="lazy"/>
                 </li>
-                {/* <li className="slide">
-                    <div className="main-product-content">
-                        <div className="product-content-box">
-                            <h3 className="sp-h3">Lorem ipsum dolor</h3>
-                            <h1 className="sp-h1">Lorem ipsum dolor sit amet.</h1>
-                            <p className="sp-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maiores et eos eaque veritatis aut laboriosam earum dolorem iste atque.</p>
-                        </div>
-                        <div className="cta-btns-box">
-                            <a href="#" className="link-cta">
-                                <span className="cta-text">Learn More</span>
-                                <span className=" next-icon material-icons material-icons-outlined">
-                                navigate_next</span>
-                            </a>
-                            <a href="#" className="link-cta">
-                                <span className="cta-text">Buy Now</span>
-                                <span className=" next-icon material-icons material-icons-outlined">
-                                navigate_next</span>
-                            </a>
-                        </div>
-                    </div>
-                    <img src="assets/drone-img2.jpg" alt="drone-img2"/>
-                </li>
-                <li className="slide">
-                    <div className="main-product-content">
-                        <div className="product-content-box">
-                            <h3 className="sp-h3">Lorem ipsum dolor</h3>
-                            <h1 className="sp-h1">Lorem ipsum dolor sit amet.</h1>
-                            <p className="sp-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maiores et eos eaque veritatis aut laboriosam earum dolorem iste atque.</p>
-                        </div>
-                        <div className="cta-btns-box">
-                            <a href="#" className="link-cta">
-                                <span className="cta-text">Learn More</span>
-                                <span className=" next-icon material-icons material-icons-outlined">
-                                navigate_next</span>
-                            </a>
-                            <a href="#" className="link-cta">
-                                <span className="cta-text">Buy Now</span>
-                                <span className=" next-icon material-icons material-icons-outlined">
-                                navigate_next</span>
-                            </a>
-                        </div>
-                    </div>
-                    <img src="assets/drone-img1.jpg" alt="drone-img3" loading="lazy"/>
-                </li> */}
             </ul>
         </div>
     </section>
@@ -97,7 +52,7 @@ function Home() {
         <div className="explore-content">
             <div className="explore-title">Explore Products in Different Fields</div>
             <div className="explore-child-list">
-                <a href="#" className="explore-child-item">
+                <Link to="#" className="explore-child-item">
                     <img className="explore-img" src="https://www1.djicdn.com/cms/uploads/6ba620d0fa99a782763ed811aadf49db.webp" alt="video-production-explore"/>
                     <div className="explore-child-content">
                         <h1 className="sp-h1">explore explore</h1>
@@ -108,9 +63,9 @@ function Home() {
                             </span>
                         </div>
                     </div>
-                </a>
+                </Link>
 
-                <a href="#" className="explore-child-item">
+                <Link to="#" className="explore-child-item">
                     <img className="explore-img" src="https://www1.djicdn.com/cms/uploads/454da8372eabc9ae7fa6ec035015ad30.webp" alt="video-production-explore"/>
                     <div className="explore-child-content">
                         <h1 className="sp-h1">explore explore</h1>
@@ -121,9 +76,9 @@ function Home() {
                             </span>
                         </div>
                     </div>
-                </a>
+                </Link>
 
-                <a href="#" className="explore-child-item">
+                <Link to="#" className="explore-child-item">
                     <img className="explore-img" src="https://www1.djicdn.com/cms/uploads/8d21c8e16c7ef90815cd3f8fedc95bfd.webp" alt="video-production-explore" loading="lazy"/>
                     <div className="explore-child-content">
                         <h1 className="sp-h1">explore explore </h1>
@@ -134,18 +89,10 @@ function Home() {
                             </span>
                         </div>
                     </div>
-                </a>
+                </Link>
             </div>
         </div>
     </section>
-
-    {/* <footer className="footer" >
-        <span className="moon-icon"><NightlightOutlinedIcon style={{width:"3rem",height:"3rem"}}/>
-        </span>
-        <div className="tagline">FREEYAY</div>
-        <a href="https://github.com/nightlight-wander" target="_blank"><i className="git-icon" ><GitHubIcon style={{width:"3rem",height:"3rem"}}/></i>
-        </a>
-    </footer> */}
     </div>
   )
 }

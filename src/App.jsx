@@ -1,12 +1,11 @@
 import Mockman from "mockman-js";
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
-import {Header} from "components/Header/Header";
-import { ProductListing } from "pages/ProductListing/ProductListing";
-import { Home } from "pages/Home/Home";
-import {Login} from "pages/Auth/Login";
-import { Signup } from "pages/Auth/Signup";
-import {Wishlist} from "pages/Wishlist/Wishlist";
-import {Bag} from "pages/Bag/Bag";
+import { ProductListing } from "./pages/ProductListing/ProductListing";
+import { Home } from "./pages/Home/Home";
+import {Login} from "./pages/Auth/Login";
+import { Signup } from "./pages/Auth/Signup";
+import {Wishlist} from "./pages/Wishlist/Wishlist";
+import {Bag} from "./pages/Bag/Bag";
 
 function App() {
   return (
