@@ -17,12 +17,12 @@ function ActionsHead() {
     <Link to="/wishlist" className="wishlist wish-badge flex-col flex-vCenter">
         <span><FavoriteBorderOutlinedIcon size={24}px/></span>
         <span className="actions-title">Wishlist</span>
-        {wishlist.length>1?<span className="status-badge flex-center">{wishlist.length}</span>:null}
+        {wishlist.length>0?<span className="status-badge flex-center">{wishlist.length}</span>:null}
     </Link>
     <Link to="/bag" className="bag bag-badge flex-col flex-vCenter">
         <span><ShoppingBagIcon/> </span>
         <span className="actions-title">Bag</span>
-        {bag.length>1?<span className="status-badge bag-status flex-center">{bag.length}</span>:null}
+        {bag.length>0?<span className="status-badge bag-status flex-center">{bag.length}</span>:null}
     </Link>
 </div>
   )
