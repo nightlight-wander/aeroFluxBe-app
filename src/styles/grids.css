@@ -1,10 +1,11 @@
-/* .rows3-grid>* {
+.rows3-grid>* {
     display: flex;
     box-sizing: border-box;
-} */
+}
 
 .rows3-grid{
     display: grid;
+    height: 100vh;
     grid-template-rows: 8rem 1fr 8rem;
     grid-template-areas:
         "row-grid1 row-grid1 row-grid1 row-grid1"
