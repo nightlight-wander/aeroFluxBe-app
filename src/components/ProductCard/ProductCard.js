@@ -1,26 +1,49 @@
-import React from 'react';
+import React,{useState} from 'react';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import './ProductCard.css' ;
+import { useAllData } from '../../context/AllDataContext';
 
 const calcPercentOff=(initialPrice,price)=>{
     return Math.floor((initialPrice-price)*100/price)
 }
 
-
 function ProductCard({singleProd}) {
-  const {
-    _id,
-    name,
-    price,
-    initialPrice,
-    ratingNo,
-    categoryName,
-    stock,
-    imageUrl,
-    reviews,
-    newProduct
-  } = singleProd;
+    const {state,dispatch}=useAllData();
+    const {
+        _id,
+        name,
+        price,
+        initialPrice,
+        ratingNo,
+        categoryName,
+        stock,
+        imageUrl,
+        reviews,
+        newProduct
+    } = singleProd;
+  const isWishlist=state.wishlist.find(item=>item._id==_id)
+  const styles={
+      borderActivate:{
+          display:isWishlist?"none":"block",
+      },
+      fillActivate:{
+          display:isWishlist?"block":"none",
+          color:isWishlist?`var(--dark-red2)`:"",
+      },
+      size:{height: "20px",width: "20px"}
+  }
+
+  const likeHandler=()=>{
+      if(isWishlist){
+        dispatch({type:"REMOVE_FROM_WISH",payload:singleProd})
+      }else {
+        dispatch({type:"ADD_TO_WISH",payload:singleProd})
+      }
+  }
+  
+
   return (
         <div key={_id} className="product">
                     <div className="product-container">
@@ -28,13 +51,13 @@ function ProductCard({singleProd}) {
                             <a href="#">
                                 <div className="prod-img-bottom-extra">
                                     <div className="prod-img-box">
-                                        <div className="prod-img" style={{height: "170px",width: "200px",maxInlineSize:"100%",objectFit:"contain"}}>
+                                        <div className="prod-img" style={{height: "170px",width: "200px",maxInlineSize:"100%"}}>
                                             <img src={imageUrl}
-                                            style={{height: "170px",width: "200px",maxInlineSize:"100%",objectFit:"contain cover",aspectRatio:"2:1"}}
+                                            style={{height: "170px",width: "200px",maxInlineSize:"100%",objectFit:"contain cover"}}
                                             alt={name}/>
                                         </div>
                                     </div>
-                                    {newProduct && <div className="prod-imgTag">New</div>}
+                                    {newProduct && <div className="prod-imgTag flex-vCenter">New</div>}
                                     {!stock && <div className="prod-imgTagBlur">OUT OF STOCK</div>}
                                 </div>
                             </a>
@@ -48,9 +71,11 @@ function ProductCard({singleProd}) {
                                 </span>
                             </div>
 
-                            <button className="like-box" >
+ 
+                            <button className="like-box" onClick={()=>{stock&&likeHandler()}} >
                                 <div className="like">
-                                    <FavoriteBorderIcon style={{height: "20px",width: "20px"}}/>
+                                    <FavoriteBorderIcon style={styles.borderActivate}/>
+                                    <FavoriteIcon style={styles.fillActivate} />
                                 </div>
                             </button>
                             <div className="product-meta-info">

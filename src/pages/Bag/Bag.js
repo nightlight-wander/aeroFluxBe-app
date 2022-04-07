@@ -1,11 +1,19 @@
 import React from 'react';
-import CheckIcon from '@mui/icons-material/Check';
 import './Bag.css';
-import {Footer} from '../../components/Footer/Footer'
+import {Footer} from '../../components/Footer/Footer';
+import {Header} from '../../components/Header/Header'
+import {CartCard} from '../../components/CartCard/CartCard';
+import { useAllData } from '../../context/AllDataContext';
 
 function Bag(){
+    const {state:{bag}}=useAllData();
+    const bagItemsCount=bag.length;
+    const itemsPrice=bag.reduce((curTotal,curItem)=>curItem.initialPrice+curTotal,0)
+    const discountedPrice=bag.reduce((curTotal,curItem)=>(curItem.initialPrice-curItem.price)+curTotal,0)
+    const totalPrice=itemsPrice-discountedPrice;
     return (
         <div className="cartGrid-wrapper rows3-grid">
+            <Header/>
             <main className="cart-main cols2-grid-cart">
                 <section className="left-cart">
                 <div className="location-wrapper flex-vCenter">
@@ -22,61 +30,15 @@ function Bag(){
                         <button className="noBorder-btn wishlist-btn">WISHLIST</button>
                     </div>
                 </div>
-                <div className="product-hz">
-                    <div className="product-container-hz">
-                        <div className="product-content-hz product-hx">
-                            <div className="right-card">
-                                <a href="#">
-                                    <div className="prod-img-bottom-extra">
-                                        <div className="prod-img-box-hz">
-                                            <div className="prod-img-hz" style={{height: "170px",width: "190px"}}>
-                                                <img src="https://image.shopmoment.com/general/Moment-DJI-CP.FP.00000001.01-DJI-FPV-Combo-01.jpg" style={{height: "170px",width: "190px"}}
-                                                alt="drone-img" loading="lazy"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button className="check-box">
-                                        <span className=" check-input"><CheckIcon/>
-                                        </span>
-                                    </button>
-                                </a>
-                                <button className="cross-box">
-                                    <div className="cross">
-                                        <span className="cross-icon">X</span>
-                                    </div>
-                                </button>
-                            </div>
-                            <div className="left-info">
-                                <div className="product-meta-info">
-                                    <h3 className="product-type"><a href="#">FPV DRONE</a></h3>
-                                    <h4 className="product-name"><a href="#">DJI-FPV EXTRA INFORMATION</a></h4>
-                                    <div className="product-price">
-                                        <span>
-                                            <span className="product-discount-price">Rs.10,000</span>
-                                            <span className="product-strike">Rs.15,000</span>
-                                        </span>
-                                        <span className="product-discount">(33%OFF)</span>
-                                    </div>
-                                    <div className="product-sizeQty">
-                                        <div className="product-qty">
-                                            <span><button className="plus-btn">+</button></span>
-                                            <span className="qty">QTY</span>
-                                            <span><button className="minus-btn">-</button></span>    
-                                        </div>
-                                        <div className="product-baseMsg">
-                                            <span className="base-icon tick-icon">&#10003;</span>
-                                            <span className="base-msg">Delievery by</span>
-                                            <span className="base-time">24 Feb 2030</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {bag.map((bagItem)=>
+                  <CartCard
+                    bagItem={bagItem}
+                    key={bagItem._id}
+                  />
+                )}
                 </section>
                 <section className="right-cart">
-                <div className="prices-display flex-col">
+                    <div className="prices-display flex-col">
                     <div className="coupons-wrapper flex-col">
                         <div className="coupons-head">OFFERS AND COUPONS</div>
                         <div className="coupons-apply d-flex">
@@ -86,13 +48,13 @@ function Bag(){
 
                     </div>
                     <div className="cardsPrice-wrapper">
-                        <div className="cardsPrice-heading">PRICE DETAILS(2 ITMES)</div>
+                        <div className="cardsPrice-heading">{`PRICE DETAILS(${bagItemsCount} ITMES)`}</div>
                         <div className="cardsPrice-breakUp">
-                            <div className="priceSummary-row"><span>TOTAL MRP</span><span>RS. 1000</span></div>
-                            <div className="priceSummary-row"><span>DISCOUNT ON MRP</span><span>-RS. 100</span></div>
-                            <div className="priceSummary-row"><span>COUPON DISCOUNT</span><span>RS. 1000</span></div>
-                            <div className="priceSummary-row"><span>DELIEVERY FEE</span><span>RS. 1000</span></div>
-                            <div className="priceTotal-row"><span>TOTAL AMOUNT</span><span>RS. 1000</span></div>
+                            <div className="priceSummary-row"><span>TOTAL MRP</span><span>{itemsPrice}</span></div>
+                            <div className="priceSummary-row"><span>DISCOUNT ON MRP</span><span>{discountedPrice}</span></div>
+                            {/* <div className="priceSummary-row"><span>COUPON DISCOUNT</span><span>RS. 1000</span></div> */}
+                            <div className="priceSummary-row"><span>DELIEVERY FEE</span><span>FREE</span></div>
+                            <div className="priceTotal-row"><span>TOTAL AMOUNT</span><span>{totalPrice}</span></div>
                         </div>
                         <div className="flex-hCenter">
                             <button className="btn btn-primary ">PLACE ORDER</button>

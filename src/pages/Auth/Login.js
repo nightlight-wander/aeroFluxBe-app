@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { Header } from '../../components/Header/Header';
+import { Header } from 'components/Header/Header';
 import "../../styles/spaces.css";
 import "../../styles/common.css";
 import "./Auth.css";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 // import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import { Footer } from '../../components/Footer/Footer';
+import { Footer } from 'components/Footer/Footer';
 
 const Login = () => {
   return (

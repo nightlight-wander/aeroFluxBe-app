@@ -5,14 +5,31 @@
     height: 2.2rem;
 }
 
+.like-box:hover .like svg{
+    left:1rem;
+}
+
+.like-box:hover {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--blackl1);
+    border-radius: 50%;
+}
+
+.product-content .like-box:hover {
+    background-color: var(--blackl1);
+}
+
 .like svg{
     font-size: 2rem;
     color: var(--dullgold);
+    position: relative;
 }
 
-.like svg:hover{
+/* .like svg:hover{
     color: var(--dark-red3);
-}
+    
+} */
 
 .product-container .product-content .product-ratings-container{
     /* background-color: var(--grey2); */
@@ -38,11 +55,21 @@ button.like-box{
     right: 0.4rem;
 }
 
-.cross-box:hover{
+/* .cross-box:hover{
     color: var(--gold1);
     background-color: var(--gold1);
-}
+} */
 
 .product-meta-info .product-strike{
     padding-left: 4px;
+}
+
+
+.btn-primary>.cart-i {
+    padding-right: 2rem;
+    transition: transform .3s ease-in-out;
+}
+
+.btn-primary:hover .cart-i {
+    transform: translateX(5px);
 }
