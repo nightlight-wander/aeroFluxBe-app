@@ -6,6 +6,7 @@ import {Login} from "./pages/Auth/Login";
 import { Signup } from "./pages/Auth/Signup";
 import {Wishlist} from "./pages/Wishlist/Wishlist";
 import {Bag} from "./pages/Bag/Bag";
+import {RequiresAuth} from "./utilities/RequiresAuth";
 
 function App() {
   return (
@@ -17,8 +18,16 @@ function App() {
             <Route path="/product-listing" element={<ProductListing/>}></Route>
             <Route path="/login" element={<Login/>}></Route>
             <Route path="/signup" element={<Signup/>}></Route>
-            <Route path="/wishlist" element={<Wishlist/>}></Route>
-            <Route path="/bag" element={<Bag/>}></Route>
+            <Route path="/wishlist" element={
+              <RequiresAuth>
+                <Wishlist/>
+              </RequiresAuth>}>
+            </Route>
+            <Route path="/bag" element={
+              <RequiresAuth>
+                <Bag/>
+              </RequiresAuth>}>
+            </Route>
             <Route path="/mock" element={<Mockman/>}></Route>
           </Routes>
       </Router>

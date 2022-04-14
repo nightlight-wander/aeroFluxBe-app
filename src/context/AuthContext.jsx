@@ -8,10 +8,11 @@ const authInitialStates = {
         email: "",
         password: ""
     },
-    eToken: "",
-    user: {},
+    eToken: localStorage.getItem("eToken")||"",
+    user: JSON.parse(localStorage.getItem("user"))||{},
     isLogin: false
 };
+
 
 const reducerFuncAuth = (state, action) => {
     switch (action.type) {

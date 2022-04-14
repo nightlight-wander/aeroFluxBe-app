@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Header } from '../../components/Header/Header';
 import "../../styles/spaces.css";
 import "../../styles/common.css";
@@ -12,19 +12,14 @@ import { useAuth } from '../../context/AuthContext';
 
 const Login = () => {
     const navigate = useNavigate();
+    const location=useLocation();
     const {authStates,authDispatch}=useAuth();
-    const {login}=authStates;
-    // const [login, setLogin] = useState({ email: "", password: "" });
-    // const [isLogin,setIsLogin]=useState(false);
-    // const [etoken,seteToken]=useState("");
-    // const [user,setUser]=useState({});
+    const {login,isLogin}=authStates;
     const loginEmailInput = (e) => {
         authDispatch({type:"POST_EMAIL",payload:e.target.value})
-        // setLogin({ ...login, email: e.target.value })
     }
     const loginPasswordInput = (e) => {
         authDispatch({type:"POST_PASS",payload:e.target.value})
-        // setLogin({ ...login, password: e.target.value })
     }
     const loginOnSubmit = async (logEmail, logPass) => {
         try {
@@ -38,11 +33,8 @@ const Login = () => {
                 localStorage.setItem("user",JSON.stringify(response.data.foundUser));
                 authDispatch({type:"GET_TOKEN",payload:response.data.encodedToken});
                 authDispatch({type:"GET_USER",payload:JSON.stringify(response.data.foundUser)});
-                authDispatch({type:"CHECK_LOGIN",payload:false})
-                // seteToken(()=>response.data.encodedToken);
-                // setUser(()=>response.data.foundUser);
-                // setIsLogin(()=>!isLogin);
-                navigate("/")
+                authDispatch({type:"CHECK_LOGIN",payload:!isLogin})
+                navigate(location?.state?.from?.pathname||"/product-listing",{replace:true})
             }else{
                 navigate("/login")
             }
@@ -53,10 +45,7 @@ const Login = () => {
 
     }
     const testUserLogin = () => {
-        authDispatch({type:"POST_EMAIL",payload:"flyflow@gmail.com"})
-        authDispatch({type:"POST_PASS",payload:"paperplanes12"})
-        // setLogin({ email: "flyflow@gmail.com", password: "paperplanes12" })
-        loginOnSubmit("flyflow@gmail.com","paperplanes12")
+        loginOnSubmit("flyflow@gmail.com","paperplanes12");
     }
 
     return (

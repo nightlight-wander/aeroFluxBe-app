@@ -14,9 +14,9 @@ function CatLinksHead() {
         <li className="cat-item" onClick={()=>dispatch({type:"GET_CATEGORIES",payload:1})}>
             <Link to="/product-listing" className="cat-link in-block">FILM-MAKING</Link>
         </li>
-        <li className="cat-item" onClick={()=>dispatch({type:"GET_CATEGORIES",payload:2})}>
+        {/* <li className="cat-item" onClick={()=>dispatch({type:"GET_CATEGORIES",payload:2})}>
             <Link to="/product-listing" className="cat-link in-block">ACCESSORIES</Link>
-        </li>
+        </li> */}
     </ul>
 </nav>
 

@@ -1,16 +1,20 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useLocation, useNavigate} from 'react-router-dom';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import './ProductCard.css' ;
 import { useAllData } from '../../context/AllDataContext';
+import { useAuth } from '../../context/AuthContext';
 
 const calcPercentOff=(initialPrice,price)=>{
     return Math.floor((initialPrice-price)*100/price)
 }
 
 function ProductCard({singleProd}) {
+    const {authStates:{eToken,isLogin}}=useAuth();
+    const location=useLocation();
+    const navigate=useNavigate();
     const {state,dispatch}=useAllData();
     const {
         _id,
@@ -37,11 +41,15 @@ function ProductCard({singleProd}) {
   }
 
   const likeHandler=()=>{
-      if(isWishlist){
-        dispatch({type:"REMOVE_FROM_WISH",payload:singleProd})
-      }else {
-        dispatch({type:"ADD_TO_WISH",payload:singleProd})
-      }
+      if(eToken && isLogin){
+        if(isWishlist){
+            dispatch({type:"REMOVE_FROM_WISH",payload:singleProd})
+          }else {
+            dispatch({type:"ADD_TO_WISH",payload:singleProd})
+          }
+      }else{
+          navigate("/login")
+      }  
   }
   
 

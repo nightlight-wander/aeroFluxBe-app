@@ -65,7 +65,7 @@ a{
 
 .search-head{
     width: 40%;
-    margin: 2rem 2rem 2rem 5rem;
+    margin-left: auto;
     position: relative;
     background-color: var(--white1);
 }
