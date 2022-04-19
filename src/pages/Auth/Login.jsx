@@ -1,6 +1,6 @@
-import React from 'react';
+import React ,{useEffect} from 'react';
 import axios from 'axios';
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate} from "react-router-dom";
 import { Header } from '../../components/Header/Header';
 import "../../styles/spaces.css";
 import "../../styles/common.css";
@@ -21,7 +21,11 @@ const Login = () => {
     const loginPasswordInput = (e) => {
         authDispatch({type:"POST_PASS",payload:e.target.value})
     }
-    const loginOnSubmit = async (logEmail, logPass) => {
+    useEffect(()=>{
+        loginOn(login.email,login.password);
+        console.log("login update")
+    },[login.email,login.password])
+    const loginOn = async (logEmail, logPass) => {
         try {
             const response = await axios.post(`/api/auth/login`, {
                 email:logEmail ,
@@ -44,8 +48,10 @@ const Login = () => {
         }
 
     }
+   
     const testUserLogin = () => {
-        loginOnSubmit("flyflow@gmail.com","paperplanes12");
+        authDispatch({type:"POST_EMAIL",payload:"flyflow@gmail.com"})
+        authDispatch({type:"POST_PASS",payload:"paperplanes12"})
     }
 
     return (
@@ -57,7 +63,7 @@ const Login = () => {
                         <li className="sp1-pd-b">Login</li>
                     </ul>
                     <div className="tabContent">
-                        <form className="login form flex-col sp4-mg-t" onSubmit={() => loginOnSubmit(login.email, login.password)}>
+                        <form className="login form flex-col sp4-mg-t" onSubmit={(e) => e.preventDefault()}>
                             <div className="input-wrapper flex-col ">
                                 <label htmlFor="email" className="text-label sp4-mg-lr">
                                     Email<span className="req-feild">*</span>
@@ -80,7 +86,7 @@ const Login = () => {
                                 </div>
                             </div>
                             <div className="btn-slide button sp-t" onClick={() => testUserLogin()}>Test Creds Login</div>
-                            <div className="btn-slide button sp-t">Sign In</div>
+                            <div className="btn-slide button sp-t" >Sign In</div>
                         </form>
                     </div>
                     <div className="sign-link"><Link to="/Signup">Create New Account</Link></div>

@@ -22,7 +22,7 @@ function ActionsHead() {
   }
   return (
     <div className="actions-head flex-vCenter">
-      {!isLogin ? <Link to="/login" className="user flex-col flex-vCenter">
+      {!isLogin? <Link to="/login" className="user flex-col flex-vCenter">
         <span><PermIdentityOutlinedIcon /> </span>
         <span className="actions-title">Profile</span>
       </Link> :

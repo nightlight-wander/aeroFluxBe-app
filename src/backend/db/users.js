@@ -23,6 +23,5 @@ export const users = [
     password: "paperplanes12",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    // "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJiMGZkNDlhMS0zZjcxLTRmODQtYTcxNC0zZjE1Yjk0NWIwM2IifQ.CI88N9zAAHHuolJlPeLAzowyYXrm5SPNe37jaA-Q2ws"
   },
 ];
