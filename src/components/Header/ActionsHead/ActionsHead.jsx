@@ -17,15 +17,17 @@ function ActionsHead() {
     localStorage.removeItem("user");
     authDispatch({type:"GET_TOKEN",payload:""});
     authDispatch({type:"GET_USER",payload:{}});
-    authDispatch({type:"CHECK_LOGIN",payload:!isLogin})
-
+    authDispatch({type:"POST_EMAIL",payload:""});
+    authDispatch({type:"POST_PASS",payload:""});
+    authDispatch({type:"CHECK_LOGIN",payload:!isLogin});
   }
   return (
     <div className="actions-head flex-vCenter">
-      {!isLogin? <Link to="/login" className="user flex-col flex-vCenter">
+      <Link to="/login" className="user flex-col flex-vCenter">
         <span><PermIdentityOutlinedIcon /> </span>
-        <span className="actions-title">Profile</span>
-      </Link> :
+        <span className="actions-title">Login</span>
+      </Link>
+      {eToken &&
         <div className="user flex-col flex-vCenter" onClick={() => logOutHandlder()}>
           <span><LogoutIcon /></span>
           <span className="actions-title">Logout</span>

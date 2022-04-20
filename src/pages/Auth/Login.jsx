@@ -22,9 +22,11 @@ const Login = () => {
         authDispatch({type:"POST_PASS",payload:e.target.value})
     }
     useEffect(()=>{
-        loginOn(login.email,login.password);
-        console.log("login update")
-    },[login.email,login.password])
+        if(login.email && login.password!==""){
+            loginOn(login.email,login.password);
+        }
+        // console.log("login update")
+    },[login])
     const loginOn = async (logEmail, logPass) => {
         try {
             const response = await axios.post(`/api/auth/login`, {
@@ -54,6 +56,11 @@ const Login = () => {
         authDispatch({type:"POST_PASS",payload:"paperplanes12"})
     }
 
+    const loginHandler=()=>{
+        authDispatch({type:"POST_EMAIL",payload:login.email})
+        authDispatch({type:"POST_PASS",payload:login.password})
+    }
+
     return (
         <div className="loginGrids-wrapper rows3-grid">
             <Header />
@@ -68,15 +75,15 @@ const Login = () => {
                                 <label htmlFor="email" className="text-label sp4-mg-lr">
                                     Email<span className="req-feild">*</span>
                                 </label>
-                                <input id="email" type="email" className="text-input sp4-mg-lr" value={login.email} onChange={() => loginEmailInput()} />
+                                <input id="email" type="email" className="text-input sp4-mg-lr" value={login.email} onChange={(e) => loginEmailInput(e)} />
 
                                 <label htmlFor="password" className="text-label sp4-mg-lr ">
                                     Password<span className="req-feild">*</span>
                                 </label>
-                                <input id="password" type="email" className="text-input sp4-mg-lr" value={login.password} onChange={() => loginPasswordInput()} />
+                                <input id="password" type="password" className="text-input sp4-mg-lr" value={login.password} onChange={(e) => loginPasswordInput(e)} />
                                 <VisibilityIcon className="eye-icon" style={{ fontSize: "2.4rem" }} />
                             </div>
-                            <div className="password-wrapper d-flex ">
+                            {/* <div className="password-wrapper d-flex ">
                                 <div className="remeber-box">
                                     <input type="checkbox" name="remember-me" />
                                     Remember Me
@@ -84,9 +91,9 @@ const Login = () => {
                                 <div className="forget-box">
                                     <Link to="#" className="link-btn">Forgot Password</Link>
                                 </div>
-                            </div>
-                            <div className="btn-slide button sp-t" onClick={() => testUserLogin()}>Test Creds Login</div>
-                            <div className="btn-slide button sp-t" >Sign In</div>
+                            </div> */}
+                            <button className="btn-slide button sp-t" onClick={() => testUserLogin()}>Test Creds Login</button>
+                            <button className="btn-slide button sp-t" onClick={()=>loginHandler()}>Sign In</button>
                         </form>
                     </div>
                     <div className="sign-link"><Link to="/Signup">Create New Account</Link></div>

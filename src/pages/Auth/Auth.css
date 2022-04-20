@@ -133,6 +133,14 @@ footer {
     cursor: pointer;
 }
 
+.login button{
+    color: var(--gold1);
+}
+
+.login input{
+    color: var(--yellowGold); 
+}
+
 /*Login Button CSS  */
 .btn-slide{
     border: none;
