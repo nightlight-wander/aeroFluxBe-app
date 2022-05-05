@@ -25,22 +25,23 @@ function ProductCardLiked({wishlistItem}) {
     newProduct
   } = wishlistItem;
   const {state,dispatch}=useAllData();
-  const {authStates:{eToken}}=useAuth();
+  const {authStates:{eToken,user}}=useAuth();
   const isBag=state.bag.find(item=>item._id===_id)
 
   
   const removeWishHandler=()=>{ 
     if(eToken ){
-       
         dispatch({type:"REMOVE_FROM_WISH",payload:wishlistItem})
     }
     
   };
   const addBagHandler=()=>{
+      console.log(user)
     if(eToken ){
-        console.log(eToken)
         if(!isBag){
             dispatch({type:"ADD_TO_BAG",payload:wishlistItem})
+            console.log(state.wishlist)
+            console.log(user)
             dispatch({type:"REMOVE_FROM_WISH",payload:wishlistItem})
           }
     }

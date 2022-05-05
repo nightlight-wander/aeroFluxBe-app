@@ -33,7 +33,6 @@ function ActionsHead() {
           <span className="actions-title">Logout</span>
         </div>
       }
-
       <Link to="/wishlist" className="wishlist wish-badge flex-col flex-vCenter">
         <span><FavoriteBorderOutlinedIcon size={24} px /></span>
         <span className="actions-title">Wishlist</span>

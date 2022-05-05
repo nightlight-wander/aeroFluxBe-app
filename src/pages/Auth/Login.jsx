@@ -25,7 +25,6 @@ const Login = () => {
         if(login.email && login.password!==""){
             loginOn(login.email,login.password);
         }
-        // console.log("login update")
     },[login])
     const loginOn = async (logEmail, logPass) => {
         try {
@@ -35,6 +34,7 @@ const Login = () => {
             });
             // saving the encodedToken in the localStorage
             if(response.status===200){
+                console.log(response);
                 localStorage.setItem("eToken", response.data.encodedToken);
                 localStorage.setItem("user",JSON.stringify(response.data.foundUser));
                 authDispatch({type:"GET_TOKEN",payload:response.data.encodedToken});
