@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -12,8 +12,6 @@ const calcPercentOff = (initialPrice, price) => {
 
 function ProductCard({ singleProd }) {
     const { authStates: { eToken, isLogin } } = useAuth();
-    // const [disable,setDisable]=useState(false);
-    const location = useLocation();
     const navigate = useNavigate();
     const { state, dispatch } = useAllData();
     const {
@@ -41,50 +39,11 @@ function ProductCard({ singleProd }) {
         size: { height: "20px", width: "20px" }
     }
 
-    // const addInWish=async()=>{
-    //     // setDisable(true);
-    //     try {
-    //         const {data: {wishlist}} = await axios.post(`api/user/wishlist`, {product:singleProd }, { headers: { authorization: eToken } })
-    //         console.log(wishlist);
-    //         // localStorage.setItem("wishlist",JSON.stringify(wishlist));
-    //         dispatch({ type: "ADD_TO_WISH", payload: singleProd});
-    //         // setDisable(false);
-    //     }
-    //     catch (error) {
-    //         console.log(error);
-    //         // setDisable(false);
-
-    //     }
-    // }
-    
-    // const removeFromWish=async()=>{
-    //     // console.log(isWishlist)
-    //     // setDisable(true);
-    //     // console.log(disable);
-    //     try {
-    //         const {data: {wishlist}}= await axios.delete(`api/user/wishlist/:${isWishlist._id}`,{ headers: { authorization: eToken } })
-    //         // console.log(data);
-    //         // localStorage.removeItem("wishlist");
-    //         dispatch({ type: "REMOVE_FROM_WISH", payload: wishlist})
-    //         // setDisable(false);
-    //     }
-    //     catch (error) {
-    //         console.log(error);
-    //         // setDisable(false);
-
-    //     }
-    // }
-
-
     const likeHandler=()=>{
         if(eToken && isLogin){
           if(!isWishlist){
-            //   addInWish();
             dispatch({type:"ADD_TO_WISH",payload:singleProd})
-              
-              
             }else {
-                // removeFromWish();
                 dispatch({type:"REMOVE_FROM_WISH",payload:singleProd})
 
             }

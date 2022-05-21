@@ -8,8 +8,8 @@ import { useAllData } from '../../context/AllDataContext';
 function Bag() {
     const { state: { bag } } = useAllData();
     const bagItemsCount = bag.length;
-    const itemsPrice = bag.reduce((curTotal, curItem) => curItem.initialPrice + curTotal, 0)
-    const discountedPrice = bag.reduce((curTotal, curItem) => (curItem.initialPrice - curItem.price) + curTotal, 0)
+    const itemsPrice = bag.reduce((curTotal, curItem) => curItem.initialPrice*curItem.qty + curTotal, 0)
+    const discountedPrice = bag.reduce((curTotal, curItem) => (curItem.initialPrice - curItem.price)*curItem.qty + curTotal, 0)
     const totalPrice = itemsPrice - discountedPrice;
     return (
         <div className="cartGrid-wrapper rows3-grid">
