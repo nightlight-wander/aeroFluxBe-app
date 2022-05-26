@@ -16,4 +16,12 @@ export const users = [
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
+  {
+    _id: uuid(),
+    userName: "Freeyay",
+    email: "flyflow@gmail.com",
+    password: "paperplanes12",
+    createdAt: formatDate(),
+    updatedAt: formatDate(),
+  },
 ];

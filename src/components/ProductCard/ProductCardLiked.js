@@ -4,6 +4,7 @@ import StarBorderIcon from '@mui/icons-material/StarBorder';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import './ProductCard.css' ;
 import { useAllData } from '../../context/AllDataContext';
+import { useAuth } from '../../context/AuthContext';
 
 const calcPercentOff=(initialPrice,price)=>{
     return Math.floor((initialPrice-price)*100/price)
@@ -24,16 +25,27 @@ function ProductCardLiked({wishlistItem}) {
     newProduct
   } = wishlistItem;
   const {state,dispatch}=useAllData();
+  const {authStates:{eToken,user}}=useAuth();
   const isBag=state.bag.find(item=>item._id===_id)
-  const removeWishHandler=()=>{
-    dispatch({type:"REMOVE_FROM_WISH",payload:wishlistItem})
+
+  
+  const removeWishHandler=()=>{ 
+    if(eToken ){
+        dispatch({type:"REMOVE_FROM_WISH",payload:wishlistItem})
+    }
+    
   };
   const addBagHandler=()=>{
-      console.log("baggg")
-      if(!isBag){
-        dispatch({type:"ADD_TO_BAG",payload:wishlistItem})
-        dispatch({type:"REMOVE_FROM_WISH",payload:wishlistItem})
-      }
+      console.log(user)
+    if(eToken ){
+        if(!isBag){
+            dispatch({type:"ADD_TO_BAG",payload:wishlistItem})
+            console.log(state.wishlist)
+            console.log(user)
+            dispatch({type:"REMOVE_FROM_WISH",payload:wishlistItem})
+          }
+    }
+      
   }
   return (
         <div key={_id} className="product">

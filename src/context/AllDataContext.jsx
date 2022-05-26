@@ -47,11 +47,11 @@ const reducerFunc = (state, action) => {
         sortBy: action.payload,
         showSpecificBrand: action.payload
       }
-    case "ADD_TO_WISH":
-      return {
-        ...state,
-        wishlist: [...state.wishlist, action.payload]
-      }
+      case "ADD_TO_WISH":
+        return {
+          ...state,
+          wishlist: [...state.wishlist, action.payload]
+        }
     case "REMOVE_FROM_WISH":
       return {
         ...state,
