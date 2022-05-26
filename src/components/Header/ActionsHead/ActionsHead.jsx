@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -11,7 +11,6 @@ import { useAuth } from '../../../context/AuthContext';
 function ActionsHead() {
   const { state: { wishlist, bag } } = useAllData();
   const { authStates: { eToken, isLogin }, authDispatch } = useAuth();
-  const navigate = useNavigate();
   const logOutHandlder = () => {
     localStorage.removeItem("eToken");
     localStorage.removeItem("user");

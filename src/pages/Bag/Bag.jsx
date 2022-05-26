@@ -14,7 +14,7 @@ function Bag() {
     return (
         <div className="cartGrid-wrapper rows3-grid">
             <Header />
-            <main className="cart-main cols2-grid-cart">
+            <main className="cart-main cols2-grid-cart"> 
                 <section className="left-cart">
                     <div className="location-wrapper flex-vCenter">
                         <div className="location-infoBox">
