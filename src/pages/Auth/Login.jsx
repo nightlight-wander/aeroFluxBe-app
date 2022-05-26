@@ -10,7 +10,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import { Footer } from '../../components/Footer/Footer';
 import { useAuth } from '../../context/AuthContext';
 
-const Login = () => {
+const Login = () => { 
     const navigate = useNavigate();
     const location=useLocation();
     const {authStates,authDispatch}=useAuth();
