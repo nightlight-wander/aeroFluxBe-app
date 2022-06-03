@@ -26,16 +26,19 @@
     position: relative;
 }
 
-/* .like svg:hover{
-    color: var(--dark-red3);
-    
-} */
-
 .product-container .product-content .product-ratings-container{
-    /* background-color: var(--grey2); */
     bottom: 9.6rem;
     margin-left:0.2rem;
     bottom: 9.8rem;
+}
+
+/* .product-container:hover .prod-img img{
+    transform: scale(1.06);
+    transition: 180ms ease-in-out 220ms;
+} */
+
+.product-container:hover{
+    background-color:var(--blackl3)
 }
 
 .product-ratings-container .star-icon{
