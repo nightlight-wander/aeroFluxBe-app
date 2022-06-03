@@ -14,6 +14,7 @@
   --black1:rgba(0,0,0,.2);
   --blackl1:rgba(68,68,68,.5);
   --blackl2:rgba(0,0,0,.1);
+  --blackl3:rgba(40,40,40,.2);
   --grey:#CCC;
   --grey1: hsla(0,0%,100%,.8);
   --grey2:hsla(0,8%,74%,.8);
@@ -58,6 +59,7 @@
   --pink6:#801357;
   --pink7:#3d1635;
   --pink8:#1c1a27;
+  --pink8-t:rgba(28,26,39,0.2);
   --pink8bg:#13101ef0;
   --gold1:rgb(224, 203, 143);
   --dullgold:#574f3b;
