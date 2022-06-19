@@ -1,10 +1,9 @@
-import { useState } from "react";
 import { addressService, editAddressService } from "../../utilities/addressService";
 import "./Address.css";
 import { useAllData } from "../../context/AllDataContext";
 import { useAuth } from "../../context/AuthContext";
 
-const ModalAddress = ({ setShowModal, curAddress, setCurAddress, edit }) => {
+const ModalAddress = ({ setShowModal, curAddress, setCurAddress, edit, setEdit}) => {
   const {
     state: { address },
   } = useAllData();
@@ -12,7 +11,7 @@ const ModalAddress = ({ setShowModal, curAddress, setCurAddress, edit }) => {
     authStates: { eToken },
   } = useAuth();
   const { dispatch } = useAllData();
-  const { userName, country, state, city, pincode, phoneNo } = curAddress;
+  const { userName, country, state, city, pincode, phoneNo } = curAddress??{}
 
   const addressFieldHandler = (e) => {
     setCurAddress((curAddress) => ({
@@ -20,6 +19,8 @@ const ModalAddress = ({ setShowModal, curAddress, setCurAddress, edit }) => {
       [e.target.name]: e.target.value,
     }));
   };
+
+  console.log(curAddress);
 
   const saveAddress = (e) => {
     e.preventDefault();
@@ -35,7 +36,15 @@ const ModalAddress = ({ setShowModal, curAddress, setCurAddress, edit }) => {
         ? addressService(curAddress, eToken, dispatch)
         : editAddressService(curAddress, eToken, dispatch)
       : console.log("error");
+    setEdit(()=>false);
+    setShowModal(false);
   };
+
+  const defaultAddressHandler=(e)=>{
+    e.preventDefault();
+    setCurAddress(()=>({userName:"Freeyay", country:"Matrix-Origin", state:"Love-Quantas", city:"Fractaloop", pincode:"111111", phoneNo:"2222222222"}))
+
+  }
 
   return (
     <div className="modal">
@@ -84,6 +93,9 @@ const ModalAddress = ({ setShowModal, curAddress, setCurAddress, edit }) => {
         />
         <button type="submit" className="add-address">
           Save
+        </button>
+        <button type="button" className="add-address" onClick={defaultAddressHandler}>
+          Default
         </button>
       </form>
       <button className="modal-closeBtn" onClick={() => setShowModal(false)}>

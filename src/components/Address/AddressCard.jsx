@@ -1,21 +1,25 @@
 import { useAllData } from "../../context/AllDataContext";
 import { useAuth } from "../../context/AuthContext";
-import { editAddressService } from "../../utilities/addressService";
+import { removeAddressService } from "../../utilities/addressService";
 
 const AddressCard = ({ curObj,setCurAddress,setShowModal,setEdit }) => {
-  const {authStates:eToken}=useAuth();
   const { userName, country, state, city, pincode, phoneNo, _id } = curObj;
-  const {state:{selectedAddId,address},dispatch}=useAllData();
+  const {state:{selectedAddId},dispatch}=useAllData();
+  const {authStates:{eToken}}=useAuth();
 
   const editAddressHandler=()=>{
     
     console.log(curObj);
-    const ifAdFound= address.find(item=>item._id===_id);
+    // const ifAdFound= address.find(item=>item._id===_id);
     // console.log(ifAdFound);
+    setEdit(()=>true);
     setCurAddress(()=>({...curObj}));
     setShowModal(true);
-    setEdit(true);
     // editAddressService(curAddress, eToken, dispatch);
+  }
+
+  const removeAddressHandler=()=>{
+    removeAddressService(curObj, eToken, dispatch);
   }
   
   return (
@@ -28,7 +32,7 @@ const AddressCard = ({ curObj,setCurAddress,setShowModal,setEdit }) => {
       <p>Pincode:<span>{pincode}</span></p>
       <p>PhoneNo:<span>{phoneNo}</span></p>
       <button className="btn btn-outline btn-small" onClick={()=>editAddressHandler(_id)}>Edit</button>
-      <button className="btn btn-outline btn-small">Remove</button>
+      <button className="btn btn-outline btn-small" onClick={()=>removeAddressHandler(_id)}>Remove</button>
     </div>
   );
 };

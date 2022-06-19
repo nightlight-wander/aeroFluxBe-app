@@ -25,7 +25,7 @@ function Bag() {
                     <div className="location-wrapper flex-vCenter">
                         <div className="location-infoBox">
                             <div className="location-name">Deliver to : <strong>{selectedAddress?.userName}</strong></div>
-                            <div className="location-subInfo">{selectedAddress?.country}{selectedAddress?.state}{selectedAddress?.city}</div>
+                            <div className="location-subInfo">{selectedAddress?.country}{" "}{selectedAddress?.state}{" "}{selectedAddress?.city}</div>
                         </div>
                         <Link to="/address" className='sp-mg-lauto'><button className="btn btn-outline btn-small ">ADD OR CHANGE ADDRESS</button></Link>
                     </div>

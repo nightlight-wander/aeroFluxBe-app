@@ -30,3 +30,16 @@ export const editAddressService = async (curAddress, eToken, dispatch) => {
   }
 };
 
+export const removeAddressService = async (curAddress, eToken, dispatch) => {
+  try {
+    const {data}= await axios.delete(
+      `/api/user/address/${curAddress._id}`,
+      { headers: { authorization: eToken } }
+    );
+    dispatch({type:"ADD_ADDRESS",payload:data.address});
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+

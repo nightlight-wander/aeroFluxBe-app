@@ -97,7 +97,7 @@ export const updateAddressandler = function (schema, request) {
             singleAddress.country=updatedAddress.country;
             singleAddress.state=updatedAddress.state;
             singleAddress.city=updatedAddress.city;
-            singleAddress.pinCode=updatedAddress.pinCode;
+            singleAddress.pincode=updatedAddress.pincode;
             singleAddress.phoneNo=updatedAddress.phoneNo;
             singleAddress.updatedAt=formatDate();
         }
