@@ -16,6 +16,10 @@
 
 .header {
     grid-area: row-grid1;
+    /* background-color:var(--pink8bg); */
+}
+
+.productGrid-wrapper .header{
     background-color:var(--pink8bg);
 }
 

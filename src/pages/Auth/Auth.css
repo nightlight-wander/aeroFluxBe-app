@@ -14,7 +14,11 @@
 .header {
     grid-area: row-grid1;
     color: var(--white);
-    background-color:var(--pink8bg);
+    
+}
+
+.loginGrids-wrapper .header{
+background-color:var(--pink8bg);
 }
 
 main{

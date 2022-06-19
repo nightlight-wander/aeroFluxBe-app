@@ -22,6 +22,13 @@ import {
   getWishlistItemsHandler,
   removeItemFromWishlistHandler,
 } from "./backend/controllers/WishlistController";
+import {
+  getAllAddressHandler,
+  addNewAddressHandler,
+  updateAddressandler,
+  removeAddressHandler,
+} from "./backend/controllers/AddressController";
+
 import { categories } from "./backend/db/categories";
 import { products } from "./backend/db/products";
 import { users } from "./backend/db/users";
@@ -38,6 +45,7 @@ export function makeServer({ environment = "development" } = {}) {
       user: Model,
       cart: Model,
       wishlist: Model,
+      address:Model,
     },
 
     // Runs on the start of the server
@@ -49,7 +57,7 @@ export function makeServer({ environment = "development" } = {}) {
       });
 
       users.forEach((item) =>
-        server.create("user", { ...item, cart: [], wishlist: [] })
+        server.create("user", { ...item, cart: [], wishlist: [],address:[] })
       );
 
       categories.forEach((item) => server.create("category", { ...item }));
@@ -84,6 +92,18 @@ export function makeServer({ environment = "development" } = {}) {
       this.delete(
         "/user/wishlist/:productId",
         removeItemFromWishlistHandler.bind(this)
+      );
+
+      // address routes (private)
+      this.get("/user/address", getAllAddressHandler.bind(this));
+      this.post("/user/address", addNewAddressHandler.bind(this));
+      this.post(
+        "/user/address/:addressId",
+        updateAddressandler.bind(this)
+      );
+      this.delete(
+        "/user/address/:addressId",
+        removeAddressHandler.bind(this)
       );
     },
   });

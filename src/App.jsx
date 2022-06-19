@@ -7,6 +7,7 @@ import { Signup } from "./pages/Auth/Signup";
 import {Wishlist} from "./pages/Wishlist/Wishlist";
 import {Bag} from "./pages/Bag/Bag";
 import {RequiresAuth} from "./utilities/RequiresAuth";
+import { Address } from "./components/Address/Address";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
                 <Bag/>
               </RequiresAuth>}>
             </Route>
+            <Route path="/address" element={<Address/>}></Route>
             <Route path="/mock" element={<Mockman/>}></Route>
           </Routes>
       </Router>

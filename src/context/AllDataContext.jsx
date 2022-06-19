@@ -10,7 +10,9 @@ const initialStates = {
   showSpecificBrand: "",
   showPriceRange: "",
   wishlist: [],
-  bag: []
+  bag: [],
+  address:[],
+  selectedAddId:null
 };
 
 const reducerFunc = (state, action) => {
@@ -76,6 +78,16 @@ const reducerFunc = (state, action) => {
       return {
         ...state,
         bag: [...state.bag.map(item => (item._id === action.payload._id && item.qty > 1) ? { ...item, qty: item.qty - 1 } : { ...item, qty: 1 })]
+      }
+    case "ADD_ADDRESS":
+      return{
+        ...state,
+        address:action.payload
+      }
+    case "CHOOSE_ADDRESSID":
+      return{
+        ...state,
+        selectedAddId:action.payload
       }
 
     default:

@@ -12,6 +12,10 @@
     
 }
 
+.cartGrid-wrapper .header{
+    background-color:var(--pink8bg);
+}
+
 .left-cart{
     grid-area: left-cart;
     margin-bottom: 4rem;
