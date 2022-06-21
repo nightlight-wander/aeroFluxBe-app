@@ -31,16 +31,16 @@ function Home() {
                             <p className="sp-text">Capture Above Everything</p>
                         </div>
                         <div className="cta-btns-box">
-                            <Link to="#" className="link-cta">
+                            <Link to="/product-listing" className="link-cta">
                                 <span className="cta-text">Learn More</span>
                                 <span className=" next-icon "><NavigateNextOutlinedIcon />
                                 </span>
                             </Link>
-                            <Link to="#" className="link-cta">
+                            {/* <Link to="/bag" className="link-cta">
                                 <span className="cta-text">Buy Now</span>
                                 <span className=" next-icon "><NavigateNextOutlinedIcon />
                                 </span>
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                     <img src="https://www1.djicdn.com/cms/uploads/150ef84c5f79da0f3cee8788b203e5b9.jpg" alt="drone-img1" loading="lazy" />

@@ -9,10 +9,12 @@
   --secondary-light:#054ab1; */
 
   --white: #ffffff;
+  --white2: rgba(255,255,255,0.3);
   --white1:#f5f5f6;
   --black: #000000;
   --black1:rgba(0,0,0,.2);
   --blackl1:rgba(68,68,68,.5);
+  --blackl11:rgba(68,68,68,.7);
   --blackl2:rgba(0,0,0,.1);
   --blackl3:rgba(40,40,40,.2);
   --grey:#CCC;
@@ -49,7 +51,7 @@
   --tomatoOrange:rgb(255,99,71);
   --coralOrange:rgb(255,127,80);
   --yellowGold:rgb(255,215,0);
-
+  --yellowGold-tp:rgb(255,215,0.2);
 
   --pink1:#dbdcd7;
 	--pink2:#dddcd7;

@@ -10,7 +10,6 @@ const calcPercentOff=(initialPrice,price)=>{
     return Math.floor((initialPrice-price)*100/price)
 }
 
-
 function ProductCardLiked({wishlistItem}) {
   const {
     _id,
@@ -25,10 +24,9 @@ function ProductCardLiked({wishlistItem}) {
     newProduct
   } = wishlistItem;
   const {state,dispatch}=useAllData();
-  const {authStates:{eToken,user}}=useAuth();
+  const {authStates:{eToken,isLogin}}=useAuth();
   const isBag=state.bag.find(item=>item._id===_id)
 
-  
   const removeWishHandler=()=>{ 
     if(eToken ){
         dispatch({type:"REMOVE_FROM_WISH",payload:wishlistItem})
@@ -36,12 +34,9 @@ function ProductCardLiked({wishlistItem}) {
     
   };
   const addBagHandler=()=>{
-      console.log(user)
-    if(eToken ){
+    if(eToken&& isLogin){
         if(!isBag){
             dispatch({type:"ADD_TO_BAG",payload:wishlistItem})
-            console.log(state.wishlist)
-            console.log(user)
             dispatch({type:"REMOVE_FROM_WISH",payload:wishlistItem})
           }
     }

@@ -6,6 +6,10 @@
         ".. wishlist-wrapper wishlist-wrapper ..";  
 }
 
+.wishlistGrid-wrapper .header{
+    background-color:var(--pink8bg);
+}
+
 .wishlist-wrapper{
     padding: 5rem 6rem 2rem;
 }

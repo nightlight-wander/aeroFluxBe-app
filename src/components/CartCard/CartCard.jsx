@@ -30,6 +30,7 @@ function CartCard({bagItem}) {
     const removeBagHandler=()=>{
         dispatch({type:"REMOVE_FROM_BAG",payload:bagItem})
     }
+    
     const decreaseQty=()=>{
         dispatch({type:"DECREASE_QTY",payload:bagItem})
     }

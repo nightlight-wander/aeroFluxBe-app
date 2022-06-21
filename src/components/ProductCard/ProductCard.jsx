@@ -27,7 +27,7 @@ function ProductCard({ singleProd }) {
         newProduct
     } = singleProd;
     const isWishlist = state.wishlist.find(item => item._id === _id)
-   
+    
     const styles = {
         borderActivate: {
             display: isWishlist ? "none" : "block",
@@ -43,9 +43,9 @@ function ProductCard({ singleProd }) {
         if(eToken && isLogin){
           if(!isWishlist){
             dispatch({type:"ADD_TO_WISH",payload:singleProd})
+            
             }else {
                 dispatch({type:"REMOVE_FROM_WISH",payload:singleProd})
-
             }
         }else{
             navigate("/login")

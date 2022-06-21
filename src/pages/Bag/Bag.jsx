@@ -4,13 +4,19 @@ import { Footer } from '../../components/Footer/Footer';
 import { Header } from '../../components/Header/Header'
 import { CartCard } from '../../components/CartCard/CartCard';
 import { useAllData } from '../../context/AllDataContext';
+import { Link } from 'react-router-dom';
 
 function Bag() {
     const { state: { bag } } = useAllData();
+    const {state:{selectedAddId,address}}=useAllData();
     const bagItemsCount = bag.length;
     const itemsPrice = bag.reduce((curTotal, curItem) => curItem.initialPrice*curItem.qty + curTotal, 0)
     const discountedPrice = bag.reduce((curTotal, curItem) => (curItem.initialPrice - curItem.price)*curItem.qty + curTotal, 0)
     const totalPrice = itemsPrice - discountedPrice;
+
+    const selectedAddress=address.find(item=>item._id===selectedAddId);
+   
+
     return (
         <div className="cartGrid-wrapper rows3-grid">
             <Header />
@@ -18,18 +24,18 @@ function Bag() {
                 <section className="left-cart">
                     <div className="location-wrapper flex-vCenter">
                         <div className="location-infoBox">
-                            <div className="location-name">Deliver to : <strong>Nisha Lamboria</strong></div>
-                            <div className="location-subInfo">Random,Planet-Flying Copter,Universe-MatrixOrigin...</div>
+                            <div className="location-name">Deliver to : <strong>{selectedAddress?.userName}</strong></div>
+                            <div className="location-subInfo">{selectedAddress?.country}{" "}{selectedAddress?.state}{" "}{selectedAddress?.city}</div>
                         </div>
-                        <button className="btn btn-outline btn-small sp-mg-lauto">CHANGE ADDRESS</button>
+                        <Link to="/address" className='sp-mg-lauto'><button className="btn btn-outline btn-small ">ADD OR CHANGE ADDRESS</button></Link>
                     </div>
-                    <div className="productActions-wrapper flex-vCenter">
+                    {/* <div className="productActions-wrapper flex-vCenter">
                         <div className="productActions-message">2/2 ITEMS SELECTED</div>
                         <div className="productActions-btn">
                             <button className="noBorder-btn remove-btn">REMOVE</button>
                             <button className="noBorder-btn wishlist-btn">WISHLIST</button>
                         </div>
-                    </div>
+                    </div> */}
                     {bag.map((bagItem) =>
                         <CartCard
                             bagItem={bagItem}
@@ -39,14 +45,14 @@ function Bag() {
                 </section>
                 <section className="right-cart">
                     <div className="prices-display flex-col">
-                        <div className="coupons-wrapper flex-col">
+                        {/* <div className="coupons-wrapper flex-col">
                             <div className="coupons-head">OFFERS AND COUPONS</div>
                             <div className="coupons-apply d-flex">
                                 <div className="apply-text">APPLY COUPONS</div>
                                 <div className="btn btn-outline btn-small coupons-btn">APPLY</div>
                             </div>
 
-                        </div>
+                        </div> */}
                         <div className="cardsPrice-wrapper">
                             <div className="cardsPrice-heading">{`PRICE DETAILS(${bagItemsCount} ITMES)`}</div>
                             <div className="cardsPrice-breakUp">
