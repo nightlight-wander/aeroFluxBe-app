@@ -29,13 +29,13 @@ function Bag() {
                         </div>
                         <Link to="/address" className='sp-mg-lauto'><button className="btn btn-outline btn-small ">ADD OR CHANGE ADDRESS</button></Link>
                     </div>
-                    <div className="productActions-wrapper flex-vCenter">
+                    {/* <div className="productActions-wrapper flex-vCenter">
                         <div className="productActions-message">2/2 ITEMS SELECTED</div>
                         <div className="productActions-btn">
                             <button className="noBorder-btn remove-btn">REMOVE</button>
                             <button className="noBorder-btn wishlist-btn">WISHLIST</button>
                         </div>
-                    </div>
+                    </div> */}
                     {bag.map((bagItem) =>
                         <CartCard
                             bagItem={bagItem}
@@ -45,14 +45,14 @@ function Bag() {
                 </section>
                 <section className="right-cart">
                     <div className="prices-display flex-col">
-                        <div className="coupons-wrapper flex-col">
+                        {/* <div className="coupons-wrapper flex-col">
                             <div className="coupons-head">OFFERS AND COUPONS</div>
                             <div className="coupons-apply d-flex">
                                 <div className="apply-text">APPLY COUPONS</div>
                                 <div className="btn btn-outline btn-small coupons-btn">APPLY</div>
                             </div>
 
-                        </div>
+                        </div> */}
                         <div className="cardsPrice-wrapper">
                             <div className="cardsPrice-heading">{`PRICE DETAILS(${bagItemsCount} ITMES)`}</div>
                             <div className="cardsPrice-breakUp">
